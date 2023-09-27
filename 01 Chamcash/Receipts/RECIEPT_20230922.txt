@@ -1,0 +1,181 @@
+-------------------------
+KVITTO  2023-09-22 14:20:37
+	Produkt-ID: 302, Antal: 2
+	Produkt-ID: 304, Antal: 2
+	Produkt-ID: 303, Antal: 2
+---------------------------
+Choklad	2st	15.00kr/st = 30kr
+Smör	2st	34.50kr/st = 69kr
+Mjölk	2st	19.50kr/st = 39kr
+
+	Totalt: 138kr
+-------------------------
+KVITTO  2023-09-22 14:30:50
+	Produkt-ID: 301, Antal: 3
+	Produkt-ID: 300, Antal: 4
+	Produkt-ID: 302, Antal: 2
+	Produkt-ID: 305, Antal: 3
+---------------------------
+Kaffe	3st	35.50kr/st = 106,5kr
+Bananer	4st	12.50kr/kg = 50kr
+Choklad	2st	15.00kr/st = 30kr
+Ost	3st	94.50kr/kg = 283,5kr
+
+	Totalt: 470kr
+-------------------------
+KVITTO  2023-09-22 15:20:05
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 303, Antal: 3
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Mjölk	3st	19.50kr/st = 58,5kr
+
+	Totalt: 83,5kr
+-------------------------
+KVITTO  2023-09-22 15:30:08
+	Produkt-ID: 300, Antal: 2
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+
+	Totalt: 25kr
+-------------------------
+KVITTO  2023-09-22 15:31:03
+	Produkt-ID: 302, Antal: 6
+---------------------------
+Choklad	6st	15.00kr/st = 90kr
+
+	Totalt: 90kr
+-------------------------
+KVITTO  2023-09-22 18:24:59
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 302, Antal: 3
+	Produkt-ID: 304, Antal: 1
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Choklad	3st	15.00kr/st = 45kr
+Smör	1st	34.50kr/st = 34,5kr
+
+	Totalt: 104,5kr
+-------------------------
+KVITTO  2023-09-22 20:20:18
+---------------------------
+
+	Totalt: 0kr
+-------------------------
+KVITTO  2023-09-22 20:22:40
+	Produkt-ID: 304, Antal: 5
+	Produkt-ID: 302, Antal: 3
+---------------------------
+Smör	5st	34.50kr/st = 172,5kr
+Choklad	3st	15.00kr/st = 45kr
+
+	Totalt: 217,5kr
+-------------------------
+KVITTO  2023-09-22 20:30:25
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 301, Antal: 4
+	Produkt-ID: 302, Antal: 2
+	Produkt-ID: 303, Antal: 5
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Kaffe	4st	35.50kr/st = 142kr
+Choklad	2st	15.00kr/st = 30kr
+Mjölk	5st	19.50kr/st = 97,5kr
+
+	Totalt: 294,5kr
+-------------------------
+KVITTO  2023-09-22 20:32:09
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 301, Antal: 2
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Kaffe	2st	35.50kr/st = 71kr
+
+	Totalt: 96kr
+-------------------------
+KVITTO  2023-09-22 20:37:51
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 301, Antal: 7
+	Produkt-ID: 302, Antal: 4
+	Produkt-ID: 303, Antal: 8
+	Produkt-ID: 304, Antal: 3
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Kaffe	7st	35.50kr/st = 248,5kr
+Choklad	4st	15.00kr/st = 60kr
+Mjölk	8st	19.50kr/st = 156kr
+Smör	3st	34.50kr/st = 103,5kr
+
+	Totalt: 593kr
+-------------------------
+KVITTO  2023-09-22 20:39:11
+	Produkt-ID: 305, Antal: 3
+---------------------------
+Ost	3st	94.50kr/kg = 283,5kr
+
+	Totalt: 283,5kr
+-------------------------
+KVITTO  2023-09-22 20:39:41
+	Produkt-ID: 300, Antal: 9
+	Produkt-ID: 301, Antal: 8
+	Produkt-ID: 302, Antal: 7
+	Produkt-ID: 303, Antal: 6
+	Produkt-ID: 304, Antal: 5
+---------------------------
+Bananer	9st	12.50kr/kg = 112,5kr
+Kaffe	8st	35.50kr/st = 284kr
+Choklad	7st	15.00kr/st = 105kr
+Mjölk	6st	19.50kr/st = 117kr
+Smör	5st	34.50kr/st = 172,5kr
+
+	Totalt: 791kr
+-------------------------
+KVITTO  2023-09-22 20:40:31
+	Produkt-ID: 300, Antal: 9
+	Produkt-ID: 301, Antal: 8
+	Produkt-ID: 302, Antal: 7
+	Produkt-ID: 303, Antal: 6
+	Produkt-ID: 304, Antal: 5
+	Produkt-ID: 305, Antal: 4
+---------------------------
+Bananer	9st	12.50kr/kg = 112,5kr
+Kaffe	8st	35.50kr/st = 284kr
+Choklad	7st	15.00kr/st = 105kr
+Mjölk	6st	19.50kr/st = 117kr
+Smör	5st	34.50kr/st = 172,5kr
+Ost	4st	94.50kr/kg = 378kr
+
+	Totalt: 1169kr
+-------------------------
+KVITTO  2023-09-22 20:41:18
+---------------------------
+
+	Totalt: 0kr
+-------------------------
+KVITTO  2023-09-22 20:42:01
+	Produkt-ID: 302, Antal: 4
+	Produkt-ID: 304, Antal: 3
+	Produkt-ID: 305, Antal: 2
+	Produkt-ID: 301, Antal: 2
+	Produkt-ID: 303, Antal: 6
+	Produkt-ID: 300, Antal: 9
+	Produkt-ID: 302, Antal: 3
+---------------------------
+Choklad	4st	15.00kr/st = 60kr
+Smör	3st	34.50kr/st = 103,5kr
+Ost	2st	94.50kr/kg = 189kr
+Kaffe	2st	35.50kr/st = 71kr
+Mjölk	6st	19.50kr/st = 117kr
+Bananer	9st	12.50kr/kg = 112,5kr
+Choklad	3st	15.00kr/st = 45kr
+
+	Totalt: 698kr
+-------------------------
+KVITTO  2023-09-22 23:27:26
+	Produkt-ID: 302, Antal: 2
+	Produkt-ID: 303, Antal: 4
+---------------------------
+Choklad	2st	15.00kr/st = 30kr
+Mjölk	4st	19.50kr/st = 78kr
+
+	Totalt: 108kr

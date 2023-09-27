@@ -1,0 +1,84 @@
+-------------------------
+KVITTO  2023-09-27 01:48:44
+---------------------------
+
+	Totalt: 0kr
+-------------------------
+KVITTO  2023-09-27 02:03:19
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 302, Antal: 3
+	Produkt-ID: 303, Antal: 2
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Kaffe	2st	35.50kr/st = 71kr
+Choklad	2st	15.00kr/st = 30kr
+Mjölk	3st	19.50kr/st = 58,5kr
+Bananer	2st	12.50kr/kg = 25kr
+Choklad	3st	15.00kr/st = 45kr
+Mjölk	2st	19.50kr/st = 39kr
+
+	Totalt: 293,5kr
+-------------------------
+KVITTO  2023-09-27 15:26:22
+	Produkt-ID: 300, Antal: 2
+Bananer 12.50 * 2  	Produkt-ID: 301, Antal: 3
+Kaffe 35.50 * 3  ---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Kaffe	3st	35.50kr/st = 106,5kr
+
+	Totalt: 131,5kr
+-------------------------
+KVITTO  2023-09-27 15:27:50
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 301, Antal: 4
+	Produkt-ID: 302, Antal: 3
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Kaffe	4st	35.50kr/st = 142kr
+Choklad	3st	15.00kr/st = 45kr
+
+	Totalt: 212kr
+-------------------------
+KVITTO  2023-09-27 15:29:03
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 300, Antal: 4
+	Produkt-ID: 302, Antal: 0
+	Produkt-ID: 302, Antal: 3
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Bananer	4st	12.50kr/kg = 50kr
+Choklad	0st	15.00kr/st = 0kr
+Choklad	3st	15.00kr/st = 45kr
+
+	Totalt: 120kr
+-------------------------
+KVITTO  2023-09-27 15:47:53
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 304, Antal: 2
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Smör	2st	34.50kr/st = 69kr
+
+	Totalt: 94kr
+-------------------------
+KVITTO  2023-09-27 15:54:15
+	Produkt-ID: 305, Antal: 3
+	Produkt-ID: 304, Antal: 2
+	Produkt-ID: 302, Antal: 3
+---------------------------
+Ost	3st	94.50kr/kg = 283,5kr
+Smör	2st	34.50kr/st = 69kr
+Choklad	3st	15.00kr/st = 45kr
+
+	Totalt: 397,5kr
+-------------------------
+KVITTO  2023-09-27 16:12:19
+	Produkt-ID: 303, Antal: 5
+	Produkt-ID: 305, Antal: 4
+	Produkt-ID: 302, Antal: 4
+---------------------------
+Mjölk	5st	19.50kr/st = 97,5kr
+Ost	4st	94.50kr/kg = 378kr
+Choklad	4st	15.00kr/st = 60kr
+
+	Totalt: 535,5kr
