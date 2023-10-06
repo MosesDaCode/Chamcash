@@ -371,3 +371,21 @@ Läsk	3st	94.50kr/kg = 283,5kr
 
 	Totalt: 764,5kr
 -------------------------
+
+KVITTO  2023-10-06 04:17:11
+	Produkt-ID: 300, Antal: 3
+	Produkt-ID: 301, Antal: 2
+	Produkt-ID: 302, Antal: 4
+	Produkt-ID: 303, Antal: 5
+	Produkt-ID: 304, Antal: 5
+	Produkt-ID: 305, Antal: 2
+---------------------------
+Bananer	3st	12.50kr/kg = 37,5kr
+Kaffe	2st	35.50kr/st = 71kr
+Choklad	4st	15.00kr/st = 60kr
+Mjölk	5st	19.50kr/st = 97,5kr
+Smör	5st	34.50kr/st = 172,5kr
+Läsk	2st	94.50kr/kg = 189kr
+
+	Totalt: 627,5kr
+-------------------------

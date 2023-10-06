@@ -118,6 +118,9 @@ namespace _01_Chamcash
                                 else
                                 {
                                     Console.WriteLine("\tFel format. Var god ange både Produkt-ID och Antal med ett mellanslag innan antalet!");
+
+                                    if (inputIdAndAmountString.ToLower() == "bajskorv" || inputIdAndAmountString.ToLower() == "bajs")
+                                        Console.WriteLine("\tBajs/Bajskorv funkar inte heller");
                                 }
 
                                
@@ -131,15 +134,15 @@ namespace _01_Chamcash
                         Console.WriteLine("\t---------");
                         Console.WriteLine("\t||Hejdå||");
                         Console.WriteLine("\t---------");
-                        Console.ReadKey();
                         menuIsRunning = false;
+                        Thread.Sleep(2000);
                         break;
 
                     default:
                         Console.WriteLine("Du har angett fel val");
 
-                        if (menuChoice == "bajskorv")
-                            Console.WriteLine("Bajskorv funkar inte!");
+                        if (menuChoice == "bajskorv" || menuChoice == "bajs")
+                            Console.WriteLine("Bajs/Bajskorv funkar inte!");
 
                         Console.ReadKey();
                         Console.Clear();
