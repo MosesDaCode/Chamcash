@@ -23,16 +23,14 @@ namespace _01_Chamcash
             return menuChoice;
 
         }
-        public static int NewCostumerMenu()
+        public static void NewCostumerMenu()
         {
             Console.WriteLine("\t-----------------------------");
             Console.WriteLine("\t||Ny kund                  ||");
             Console.WriteLine("\t||Ange produktid och antal.||");
             Console.WriteLine("\t-----------------------------");
-            Console.Write("\tAnge in antalet produkter som ska skannas: ");
-            int.TryParse(Console.ReadLine(), out int totalAmount);    // krashar vid mellanslag FIXA!! Kan vara För att det är en int inte en sträng
-            
-            return totalAmount ;
         }
+            
+            
     }
 }

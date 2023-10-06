@@ -1,0 +1,9 @@
+-------------------------
+KVITTO  2023-09-28 10:29:28
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 302, Antal: 3
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Choklad	3st	15.00kr/st = 45kr
+
+	Totalt: 70kr

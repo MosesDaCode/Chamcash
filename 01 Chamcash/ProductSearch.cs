@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace _01_Chamcash
 {
-    internal class ProductSearch
+    public class ProductSearch
     {
-        private static int LinearSearch(List<string[]> searchProducts, string stringInput)
+        public static int LinearSearch(List<string[]> searchProducts, string stringInput)
         {
             for (int i = 0; i < searchProducts.Count; i++)
             {
