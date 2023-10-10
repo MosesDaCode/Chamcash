@@ -132,8 +132,64 @@ namespace _01_Chamcash
 
 
                     case "2":
-                        Console.Clear();
-                        Menus.AdminMenu();
+                        bool adminRunning = true;
+
+                        while (adminRunning)
+                        {
+                            string adminChoice = Menus.AdminMenu();
+                            Console.Clear();
+
+                            switch (adminChoice)
+                            {
+                                case "1":
+                                    Console.WriteLine("\t---------------------------");
+                                    Console.WriteLine("\t||Redigering av produkter||");
+                                    Console.WriteLine("\t---------------------------\n");
+
+                                    Console.Write("\tAnge Produkt-ID för produkten som ska redigeras: ");
+                                    string productToEdit = Console.ReadLine();
+
+                                    Console.Write("\tAnge ett nytt namn: ");
+                                    string newName = Console.ReadLine();
+
+                                    Console.Write("\tAnge ett nytt pris: ");
+                                    string newPrice = Console.ReadLine();
+
+                                    Console.Write("\tAnge en ny enhet enligt följande (/st, /kg): ");
+                                    string newUnit = Console.ReadLine();
+
+                                    productSearch.EditProducts(products, productToEdit, newName, newPrice, newUnit);
+
+                                    Console.WriteLine("\tTryck på enter för att fortsätta... ");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+                                case "2":
+                                    Console.WriteLine("Meny valet existerar inte för tillfället, vänligen tryck enter för att försöka igen ");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+                                case "3":
+                                    Console.WriteLine("Meny valet existerar inte för tillfället, vänligen tryck enter för att försöka igen ");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+                                case "0":
+                                    Console.Clear ();
+                                    adminRunning = false;
+                                    break;
+                                default:
+                                    Console.WriteLine("Du har angett fel meny val, tryck på enter för att fortsätta!");
+
+                                    if (adminChoice == "bajskorv" || adminChoice == "bajs")
+                                        Console.WriteLine("Bajs/Bajskorv funkar inte!");
+
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    break;
+
+                            }
+                        }
                         break;
 
 
@@ -147,10 +203,10 @@ namespace _01_Chamcash
                         break;
 
                     default:
-                        Console.WriteLine("Du har angett fel val");
+                        Console.WriteLine("Du har angett fel meny val, tryck på enter för att fortsätta!");
 
                         if (menuChoice == "bajskorv" || menuChoice == "bajs")
-                            Console.WriteLine("Bajs/Bajskorv funkar inte!");
+                            Console.WriteLine("Bajs/Bajskorv funkar inte! Hur gammal är du egentligen!");
 
                         Console.ReadKey();
                         Console.Clear();

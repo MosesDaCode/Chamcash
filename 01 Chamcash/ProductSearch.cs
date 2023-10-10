@@ -39,5 +39,22 @@ namespace _01_Chamcash
             products.Add(new string[] { "Smör", "304", "/st", "34.50" });
             products.Add(new string[] { "Läsk", "305", "/kg", "94.50" });
         }
+        public void EditProducts(List<string[]> products, string productId, string newName, string newPrice, string newUnit)
+        {
+            int searchResult = LinearSearch(products, productId);
+
+            if (searchResult != -1)
+            {
+                products[searchResult][0] = newName;
+                products[searchResult][3] = newPrice;
+                products[searchResult][2] = newUnit;
+
+                Console.WriteLine("Produkten har uppdaterats.");
+            }
+            else
+            {
+                Console.WriteLine("Produkt-ID hittades ej, Försök igen");
+            }
+        }
     }
 }

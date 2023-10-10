@@ -142,3 +142,55 @@ Läsk	2st	94.50kr/kg = 189kr
 
 	Totalt: 477kr
 -------------------------
+
+KVITTO  2023-10-10 15:39:55
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 302, Antal: 3
+	Produkt-ID: 301, Antal: 4
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Choklad	3st	15.00kr/st = 45kr
+Kaffe	4st	35.50kr/st = 142kr
+
+	Totalt: 212kr
+-------------------------
+
+KVITTO  2023-10-10 15:40:15
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 304, Antal: 3
+	Produkt-ID: 305, Antal: 3
+---------------------------
+Bananer	2st	12.50kr/kg = 25kr
+Smör	3st	34.50kr/st = 103,5kr
+Läsk	3st	94.50kr/kg = 283,5kr
+
+	Totalt: 412kr
+-------------------------
+
+KVITTO  2023-10-10 16:47:53
+	Produkt-ID: 300, Antal: 3
+---------------------------
+
+	Totalt: 0kr
+-------------------------
+
+KVITTO  2023-10-10 16:50:36
+	Produkt-ID: 300, Antal: 4
+	Produkt-ID: 302, Antal: 3
+	Produkt-ID: 304, Antal: 2
+	Produkt-ID: 305, Antal: 2
+---------------------------
+Bananer	4st	12.50kr/kg = 50kr
+Choklad	3st	15.00kr/st = 45kr
+Smör	2st	34.50kr/st = 69kr
+Läsk	2st	94.50kr/kg = 189kr
+
+	Totalt: 353kr
+-------------------------
+
+KVITTO  2023-10-10 16:52:27
+	Produkt-ID: 300, Antal: 3
+---------------------------
+
+	Totalt: 0kr
+-------------------------

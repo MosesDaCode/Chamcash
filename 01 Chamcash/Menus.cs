@@ -16,7 +16,6 @@ namespace _01_Chamcash
                 Console.WriteLine("\t||1. Ny kund   ||");
                 Console.WriteLine("\t||2. Admin     ||");
                 Console.WriteLine("\t||0. Avsluta   ||");
-                Console.WriteLine("\t||             ||");
                 Console.WriteLine("\t-----------------");
                 Console.Write("\tAnge menyval: ");
                 string menuChoice = Console.ReadLine();
@@ -25,18 +24,25 @@ namespace _01_Chamcash
         }
         public static void NewCostumerMenu()
         {
-            Console.WriteLine("\t--------------------------------");
-            Console.WriteLine("\t||Ny kund                     ||");
-            Console.WriteLine("\t||Ange produktid och antal.   ||");
-            Console.WriteLine("\t||Skriv 'PAY' för att betala. ||");
-            Console.WriteLine("\t||Skriv '0' för att avsluta.  ||");
-            Console.WriteLine("\t--------------------------------");
+            Console.WriteLine("\t-----------------------------------");
+            Console.WriteLine("\t||Ny kund                        ||");
+            Console.WriteLine("\t-----------------------------------");
+            Console.WriteLine("\t||Skriv ett produktid och antal. ||");
+            Console.WriteLine("\t||Skriv 'PAY' för att betala.    ||");
+            Console.WriteLine("\t||Skriv '0' för att gå tillbaka  ||");
+            Console.WriteLine("\t-----------------------------------");
         }
-        public static void AdminMenu()
+        public static string AdminMenu()
         {
             Console.WriteLine("\t-------------------------");
             Console.WriteLine("\t||1. Redigera produkter||");
+            Console.WriteLine("\t||2. Lägg till produkt ||");
+            Console.WriteLine("\t||3. Kampanjer         ||");
+            Console.WriteLine("\t||0. Gå tillbaka       ||");
             Console.WriteLine("\t-------------------------");
+            Console.Write("\tAnge menyval: ");
+            string adminChoice = Console.ReadLine();
+            return adminChoice;
         }
             
             
