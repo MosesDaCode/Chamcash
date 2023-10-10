@@ -25,10 +25,18 @@ namespace _01_Chamcash
         }
         public static void NewCostumerMenu()
         {
-            Console.WriteLine("\t-----------------------------");
-            Console.WriteLine("\t||Ny kund                  ||");
-            Console.WriteLine("\t||Ange produktid och antal.||");
-            Console.WriteLine("\t-----------------------------");
+            Console.WriteLine("\t--------------------------------");
+            Console.WriteLine("\t||Ny kund                     ||");
+            Console.WriteLine("\t||Ange produktid och antal.   ||");
+            Console.WriteLine("\t||Skriv 'PAY' för att betala. ||");
+            Console.WriteLine("\t||Skriv '0' för att avsluta.  ||");
+            Console.WriteLine("\t--------------------------------");
+        }
+        public static void AdminMenu()
+        {
+            Console.WriteLine("\t-------------------------");
+            Console.WriteLine("\t||1. Redigera produkter||");
+            Console.WriteLine("\t-------------------------");
         }
             
             

@@ -9,19 +9,8 @@ namespace _01_Chamcash
         {
 
             ProductSearch productSearch = new ProductSearch();
-
-            List<string[]> products = new List<string[]>(); // Initierar listan med produkter.
-            products.Add(new string[] { "Bananer", "300", "/kg", "12.50" });
-            products.Add(new string[] { "Kaffe", "301", "/st", "35.50" });
-            products.Add(new string[] { "Choklad", "302", "/st", "15.00" });
-            products.Add(new string[] { "Mjölk", "303", "/st", "19.50" });
-            products.Add(new string[] { "Smör", "304", "/st", "34.50" });
-            products.Add(new string[] { "Läsk", "305", "/kg", "94.50" });  //lägg till en tab på ost.
-
-            // Initierar lista för kvitto som drar ifrån listan för produkter.
-            List<string[]> receipt = new List<string[]>();
-
-
+            List<string[]> products = productSearch.GetProducts(); // Initierar listan med produkter.
+           
             string pay = null;
             bool menuIsRunning = true; // Håller menyn aktiv
 
@@ -47,6 +36,10 @@ namespace _01_Chamcash
 
                             string filePath = $"../../../Receipts/RECIEPT_{dateTime.ToString("yyyy-MM-dd")}.txt"; // filePath skapar en .txt fil. filePath är sökvägen där kvittot ska sparas. 
                             string receiptText = $"\n\nKVITTO  {dateTime}\n";
+
+
+                            List<string[]> receipt = new List<string[]>();
+
 
                             bool productExist = true;
                             while (productExist)   
@@ -91,10 +84,11 @@ namespace _01_Chamcash
                                         if (float.TryParse(items[0], NumberStyles.Float, CultureInfo.InvariantCulture, out float inputAmountFloat) &&
                                             float.TryParse(items[2], NumberStyles.Float, CultureInfo.InvariantCulture, out float pricePerUnitFloat))
                                         {
-                                            float totalPrisAvProdukt = inputAmountFloat * pricePerUnitFloat;
-                                            receiptText += $"{items[1]}\t{items[0]}st\t{items[2]}kr{items[3]} = {totalPrisAvProdukt}kr\n";
-                                            totalSum += totalPrisAvProdukt;
+                                            float totalPriceOfProduct = inputAmountFloat * pricePerUnitFloat;
+                                            receiptText += $"{items[1]}\t{items[0]}st\t{items[2]}kr{items[3]} = {totalPriceOfProduct}kr\n";
+                                            totalSum += totalPriceOfProduct;
                                         }
+
                                         else
                                         {
                                             Console.WriteLine("\tOgiltigt kvitto!!");
@@ -102,15 +96,22 @@ namespace _01_Chamcash
                                     }
 
                                     receiptText += $"\n\tTotalt: {totalSum}kr\n-------------------------";
-                                    Console.Write("\tSkriv PAY för att betala:  ");
-                                    pay = Console.ReadLine();
-                                    if (pay.ToUpper() == "PAY")
+                                    if (inputIdAndAmountString.ToUpper() == "PAY")
                                     {
 
                                         File.AppendAllText(filePath, receiptText);
-                                        Console.WriteLine("\tKvittot har sparats");
+                                        Console.WriteLine(receiptText);
+                                        Console.WriteLine("\tKvittot har sparats, tryck på enter för att komma vidare.");
+
+                                        receipt.Clear();
                                     }
                                     Console.ReadKey();
+                                    Console.Clear();
+                                    productExist = false;
+                                    newCostumer = false;
+                                }
+                                else if (inputIdAndAmountString == "0")
+                                {
                                     Console.Clear();
                                     productExist = false;
                                     newCostumer = false;
@@ -128,6 +129,13 @@ namespace _01_Chamcash
 
                         }
                         break;
+
+
+                    case "2":
+                        Console.Clear();
+                        Menus.AdminMenu();
+                        break;
+
 
 
                     case "0":
