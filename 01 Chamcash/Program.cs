@@ -142,6 +142,10 @@ namespace _01_Chamcash
                             switch (adminChoice)
                             {
                                 case "1":
+                                    productSearch.CreateNewProduct();
+                                    Console.Clear();
+                                    break;
+                                case "2":
                                     Console.WriteLine("\t---------------------------");
                                     Console.WriteLine("\t||Redigering av produkter||");
                                     Console.WriteLine("\t---------------------------\n");
@@ -161,11 +165,6 @@ namespace _01_Chamcash
                                     productSearch.EditProducts(products, productToEdit, newName, newPrice, newUnit);
 
                                     Console.WriteLine("\tTryck på enter för att fortsätta... ");
-                                    Console.ReadKey();
-                                    Console.Clear();
-                                    break;
-                                case "2":
-                                    Console.WriteLine("Meny valet existerar inte för tillfället, vänligen tryck enter för att försöka igen ");
                                     Console.ReadKey();
                                     Console.Clear();
                                     break;

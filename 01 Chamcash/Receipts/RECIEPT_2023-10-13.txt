@@ -1,0 +1,23 @@
+
+
+KVITTO  2023-10-13 00:17:14
+	Produkt-ID: 306, Antal: 4
+---------------------------
+Korv	4st	35.50kr/st = 142kr
+
+	Totalt: 142kr
+-------------------------
+
+KVITTO  2023-10-13 00:43:25
+	Produkt-ID: 306, Antal: 3
+	Produkt-ID: 307, Antal: 5
+	Produkt-ID: 300, Antal: 2
+	Produkt-ID: 302, Antal: 4
+---------------------------
+Korv	3st	35.50kr/st = 106,5kr
+Godis	5st	90kr/kg = 450kr
+Bananer	2st	12.50kr/kg = 25kr
+Choklad	4st	15.00kr/st = 60kr
+
+	Totalt: 641,5kr
+-------------------------

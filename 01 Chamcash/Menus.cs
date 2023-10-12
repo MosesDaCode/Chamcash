@@ -35,8 +35,8 @@ namespace _01_Chamcash
         public static string AdminMenu()
         {
             Console.WriteLine("\t-------------------------");
-            Console.WriteLine("\t||1. Redigera produkter||");
-            Console.WriteLine("\t||2. Lägg till produkt ||");
+            Console.WriteLine("\t||1. Lägg till produkt ||");
+            Console.WriteLine("\t||2. Redigera produkter||");
             Console.WriteLine("\t||3. Kampanjer         ||");
             Console.WriteLine("\t||0. Gå tillbaka       ||");
             Console.WriteLine("\t-------------------------");
