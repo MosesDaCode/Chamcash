@@ -9,7 +9,6 @@ namespace _01_Chamcash
     public class ProductSearch
     {
         private List<string[]> products;
-        private string productFilePatch = "../../../Products/Productlist.txt";
         public ProductSearch()
         {
             products = new List<string[]>();
@@ -63,7 +62,7 @@ namespace _01_Chamcash
             Console.WriteLine("\t-------------------------");
             Console.WriteLine("\t||Lägg till en produkt ||");
             Console.WriteLine("\t-----------------------\n");
-            Console.Write("\t\n\nAnge produkt-ID: ");
+            Console.Write("\n\n\tAnge produkt-ID: ");
             string productId = Console.ReadLine();
             int searchResult = LinearSearch(products, productId);
             if (searchResult == -1)
