@@ -1,52 +1,52 @@
-﻿using System;
+﻿using _01_ChamCash;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace _01_Chamcash
+namespace _01_ChamCash
 {
-    class Campaign
+    class Campaign : Products
     {
-        private ProductSearch _productSearch;
-        public List<Campaign> campaignPrices { get; } = new List<Campaign>();
-        private List<string[]> products;
+
+        public List<Campaign> _campaignPrices { get; } = new List<Campaign>();
+        private List<string[]> _products;
 
         public string _productId { get; set; }
         public DateTime _startDate { get; set; }
         public DateTime _endDate { get; set; }
         public float _price { get; set; }
 
-
-        public Campaign(string productId, DateTime startDate, DateTime endDate, float price)
+        public Campaign(string productId, DateTime startDate, DateTime endDate, float price, string productFilePath) : base(productFilePath)
         {
             _productId = productId;
             _startDate = startDate;
             _endDate = endDate;
             _price = price;
         }
-        
-
-        public Campaign(ProductSearch products) 
+        public Campaign() : base("../../../Products/ProductList.txt")
         {
-            _productSearch = products;
+            _products = new List<string[]>();
         }
+
         public void AddActiveCampaign(Campaign campaign)
         {
-            campaignPrices.Add(campaign);
+            _campaignPrices.Add(campaign);
         }
         public void RemoveActiveCampaign(string productToRemove)
         {
             DateTime currentDate = DateTime.Now;
-            campaignPrices.RemoveAll(campaign => campaign._endDate < currentDate && campaign._productId == productToRemove);  
+            _campaignPrices.RemoveAll(campaign => campaign._endDate < currentDate && campaign._productId == productToRemove);
         }
         public void RemoveCampaign(string removeCampaignstring)
         {
-            Campaign campaignToRemove = campaignPrices.Find(campaign => campaign._productId == removeCampaignstring);
+            Campaign campaignToRemove = _campaignPrices.Find(campaign => campaign._productId == removeCampaignstring);
             if (campaignToRemove != null)
             {
-                campaignPrices.Remove(campaignToRemove);
+                _campaignPrices.Remove(campaignToRemove);
                 Console.WriteLine("Kampanjen har tagits bort!");
             }
             else
@@ -56,15 +56,9 @@ namespace _01_Chamcash
         }
         public void CampainManagment()
         {
-            Console.WriteLine("\t-------------------------");
-            Console.WriteLine("\t||Kampanjhantering     ||");
-            Console.WriteLine("\t-------------------------");
-            Console.WriteLine("\t||1. Lägg till kampanj ||");
-            Console.WriteLine("\t||2. Ta bort kampanj   ||");
-            Console.WriteLine("\t||0. Gå tillbaka       ||");
-            Console.WriteLine("\t-----------------------\n");
-            Console.Write("Ange menyval: ");
-            string campaignChoice = Console.ReadLine();
+            var campaignChoice = Menus.CampaignMenu();
+            var products = new Products("../../../Products/ProductList.txt");
+
 
             bool campaignManagmentRunning = true;
             while (campaignManagmentRunning)
@@ -74,7 +68,7 @@ namespace _01_Chamcash
                     case "1":
                         Console.Write("Skriv Produkt-ID för produkten: ");
                         string productToAddCampaign = Console.ReadLine();
-                        int searchresult = ProductSearch.LinearSearch(_productSearch.GetProducts(), productToAddCampaign);
+                        int searchresult = Products.LinearSearch(products.GetProductsFromFile(), productToAddCampaign);
 
                         if (searchresult != -1)
                         {
@@ -87,8 +81,8 @@ namespace _01_Chamcash
                                     Console.Write("Ange ett kampanjpris: ");
                                     if (float.TryParse(Console.ReadLine(), out float campaignPrice))
                                     {
-                                        Campaign newCampaignPrice = new Campaign(productToAddCampaign, startDate, endDate, campaignPrice);
-                                        campaignPrices.Add(newCampaignPrice);
+                                        Campaign newCampaignPrice = new Campaign(productToAddCampaign, startDate, endDate, campaignPrice, "../../../Products/ProductList.txt");
+                                        _campaignPrices.Add(newCampaignPrice);
                                         if (newCampaignPrice._endDate >= DateTime.Now)
                                         {
                                             AddActiveCampaign(newCampaignPrice);
@@ -111,16 +105,16 @@ namespace _01_Chamcash
                             }
                         }
                         else if (productToAddCampaign == "0")
-                                    {
+                        {
                             campaignManagmentRunning = false;
                             Console.Clear();
                         }
                         else
-                        { 
-                            Console.WriteLine("Producten finns inte!"); 
+                        {
+                            Console.WriteLine("Producten finns inte!");
                         }
-                    break;
-                        case "2":
+                        break;
+                    case "2":
                         Console.Write("Ange product-ID på vars kampanj du vill ta bort: ");
                         string productToRemove = Console.ReadLine();
 

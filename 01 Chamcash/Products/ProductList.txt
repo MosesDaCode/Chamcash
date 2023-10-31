@@ -1,0 +1,12 @@
+Bananer, 300, kg, 12.50
+Kaffe, 301, st, 35.50
+Choklad, 302, st, 15.00
+Mjölk, 303, st, 19.50
+Snus,304,st,49
+Läsk, 305, kg, 94.50
+Korv, 306, st, 35
+Kött, 307, kg, 89
+Parfym, 308, st, 78.50
+Vatten, 309, st, 19.90
+Mango, 310, st, 40
+Skinka, 311, st, 59.90

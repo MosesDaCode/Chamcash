@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01_Chamcash
+namespace _01_ChamCash
 {
     internal class Menus
     {
@@ -22,7 +22,7 @@ namespace _01_Chamcash
             return menuChoice;
 
         }
-        public static void NewCostumerMenu()
+        public static void NewCostumerDisplay()
         {
             Console.WriteLine("\t-----------------------------------");
             Console.WriteLine("\t||Ny kund                        ||");
@@ -44,7 +44,20 @@ namespace _01_Chamcash
             string adminChoice = Console.ReadLine();
             return adminChoice;
         }
-            
-            
+        public static string CampaignMenu()
+        {
+            Console.WriteLine("\t-------------------------");
+            Console.WriteLine("\t||Kampanjhantering     ||");
+            Console.WriteLine("\t-------------------------");
+            Console.WriteLine("\t||1. Lägg till kampanj ||");
+            Console.WriteLine("\t||2. Ta bort kampanj   ||");
+            Console.WriteLine("\t||0. Gå tillbaka       ||");
+            Console.WriteLine("\t-----------------------\n");
+            Console.Write("Ange menyval: ");
+            string campaignChoice = Console.ReadLine();
+            return campaignChoice;
+        }
+
+
     }
 }

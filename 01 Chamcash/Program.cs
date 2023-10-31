@@ -1,8 +1,8 @@
-﻿using System.Diagnostics;
+﻿using _01_ChamCash;
 using System.Globalization;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Text;
 
-namespace _01_Chamcash
+namespace _01_ChamCash
 {
     class Program
     {
@@ -10,15 +10,18 @@ namespace _01_Chamcash
         static void Main(string[] args)
         {
 
-            ProductSearch productSearch = new ProductSearch();
-            List<string[]> products = productSearch.GetProducts(); // Initierar listan med produkter ifrån GetProducts metoden som är i ProductSearch klassen.
-            Campaign newCampaignPrice = new Campaign(productSearch);
+            //SerialNumber serialNumber = new SerialNumber();
+            //Console.OutputEncoding = Encoding.UTF8;
+            ProductEditor productSearch = new ProductEditor("../../../Products/ProductList.txt");
+            Products products = new Products("../../../Products/ProductList.txt");
+            List<string[]> productList = products.GetProductsFromFile(); // Initierar listan med produkter ifrån GetProducts metoden som är i ProductSearch klassen.
+            Campaign newCampaignPrice = new Campaign();
             newCampaignPrice.AddActiveCampaign(newCampaignPrice);
 
             string removeCampaignString = null;
             string pay = null;
-            bool menuIsRunning = true; // Håller menyn aktiv
 
+            bool menuIsRunning = true; // Håller menyn aktiv
             while (menuIsRunning)
             {
                 string menuChoice = Menus.FirstMenu();
@@ -36,10 +39,10 @@ namespace _01_Chamcash
 
 
 
-                            Menus.NewCostumerMenu();
+                            Menus.NewCostumerDisplay();
 
 
-                            // Plussar på löpnummer efter varje kvitto
+                            //Plussar på löpnummer efter varje kvitto
                             int serialNumber = 0;
                             string serialNumberFilePath = "../../../SerialNumber/serialNumber.txt";
                             if (File.Exists(serialNumberFilePath))
@@ -53,9 +56,9 @@ namespace _01_Chamcash
 
                             string filePath = $"../../../Receipts/RECIEPT_{dateTime.ToString("yyyy-MM-dd")}.txt"; // filePath skapar en .txt fil. filePath är sökvägen där kvittot ska sparas. 
                             string receiptText = $"\n\n\tKVITTO\n ";
-                                   receiptText += $"{dateTime}\n" +
-                            $"Kvitto:{serialNumber}\n" +
-                            $"---------------------------\n";
+                            receiptText += $"{dateTime}\n" +
+                     $"Kvitto:{serialNumber}\n" +
+                     $"---------------------------\n";
 
 
 
@@ -63,7 +66,7 @@ namespace _01_Chamcash
 
 
                             bool productExist = true;
-                            while (productExist)   
+                            while (productExist)
                             {
                                 int searchResult = -1;
                                 int inputAmount = 0;
@@ -78,7 +81,7 @@ namespace _01_Chamcash
                                     string inputId = inputIdAndAmount[0];
                                     int.TryParse(inputIdAndAmount[1], out inputAmount);
 
-                                    searchResult = ProductSearch.LinearSearch(products, inputId);
+                                    searchResult = Products.LinearSearch(productList, inputId);
 
                                     if (searchResult == -1)
                                     {
@@ -87,15 +90,15 @@ namespace _01_Chamcash
                                     }
                                     else
                                     {
-                                        receipt.Add(new string[] { inputAmount.ToString(), products[searchResult][0], products[searchResult][3], products[searchResult][2] });
+                                        receipt.Add(new string[] { inputAmount.ToString(), productList[searchResult][0], productList[searchResult][3], productList[searchResult][2] });
                                         receiptText += $"Produkt-ID: {inputId}, Antal: {inputAmount}\n";
 
-                                        Console.WriteLine($"\t{products[searchResult][0]} {products[searchResult][3]} * {inputAmount}  ");
+                                        Console.WriteLine($"\t{productList[searchResult][0]} {productList[searchResult][3]}kr * {inputAmount}  ");
                                     }
-                                    
+
 
                                 }
-                                else if (inputIdAndAmountString == "pay")
+                                else if (inputIdAndAmountString.ToUpper() == "PAY")
                                 {
                                     receiptText += "---------------------------\n";
                                     foreach (var items in receipt)
@@ -104,7 +107,7 @@ namespace _01_Chamcash
                                             float.TryParse(items[2], NumberStyles.Float, CultureInfo.InvariantCulture, out float pricePerUnitFloat))
                                         {
                                             float totalPriceOfProduct = inputAmountFloat * pricePerUnitFloat;
-                                            receiptText += $"{items[1]}\t{items[0]}st\t{items[2]}kr{items[3]} = {totalPriceOfProduct}kr\n";
+                                            receiptText += $"{items[1]}\t{items[0]}st\t{items[2]}kr /{items[3]} = {totalPriceOfProduct}kr\n";
                                             totalSum += totalPriceOfProduct;
                                         }
 
@@ -112,7 +115,7 @@ namespace _01_Chamcash
                                         {
                                             Console.WriteLine("\tOgiltigt kvitto!!");
                                         }
-                                        Campaign validCampaign = newCampaignPrice.campaignPrices.Find(campaign => campaign._productId == items[1] && DateTime.Now >= campaign._startDate && DateTime.Now <= campaign._endDate);
+                                        Campaign validCampaign = newCampaignPrice._campaignPrices.Find(campaign => campaign._productId == items[1] && DateTime.Now >= campaign._startDate && DateTime.Now <= campaign._endDate);
                                         if (validCampaign != null)
                                         {
                                             float discount = (float.Parse(items[2], CultureInfo.InvariantCulture) * validCampaign._price);
@@ -129,7 +132,7 @@ namespace _01_Chamcash
                                     receiptText += $"\n\tTotalt: {totalSum}kr\n-------------------------- ";
                                     if (inputIdAndAmountString.ToUpper() == "PAY")
                                     {
-                                        
+
                                         File.AppendAllText(filePath, receiptText);
                                         Console.WriteLine(receiptText);
                                         Console.WriteLine("\tKvittot har sparats, tryck på enter för att komma vidare.");
@@ -139,7 +142,7 @@ namespace _01_Chamcash
                                     File.WriteAllText(serialNumberFilePath, serialNumber.ToString());
 
                                     Console.ReadKey();
-                                    Console.Clear(); 
+                                    Console.Clear();
                                     productExist = false;
                                     newCostumer = false;
                                 }
@@ -157,7 +160,7 @@ namespace _01_Chamcash
                                         Console.WriteLine("\tBajs/Bajskorv funkar inte heller");
                                 }
 
-                               
+
                             }
 
                         }
@@ -175,30 +178,11 @@ namespace _01_Chamcash
                             switch (adminChoice)
                             {
                                 case "1":
-                                    productSearch.CreateNewProduct();
+                                    productSearch.CreateNewProduct(productList);
                                     Console.Clear();
                                     break;
                                 case "2":
-                                    Console.WriteLine("\t---------------------------");
-                                    Console.WriteLine("\t||Redigering av produkter||");
-                                    Console.WriteLine("\t---------------------------\n");
-
-                                    Console.Write("\tAnge Produkt-ID för produkten som ska redigeras: ");
-                                    string productToEdit = Console.ReadLine();
-
-                                    Console.Write("\tAnge ett nytt namn: ");
-                                    string newName = Console.ReadLine();
-
-                                    Console.Write("\tAnge ett nytt pris: ");
-                                    string newPrice = Console.ReadLine();
-
-                                    Console.Write("\tAnge en ny enhet enligt följande (/st, /kg): ");
-                                    string newUnit = Console.ReadLine();
-
-                                    productSearch.EditProducts(products, productToEdit, newName, newPrice, newUnit);
-
-                                    Console.WriteLine("\tTryck på enter för att fortsätta... ");
-                                    Console.ReadKey();
+                                    productSearch.EditProduct(productList);
                                     Console.Clear();
                                     break;
                                 case "3":
@@ -241,6 +225,7 @@ namespace _01_Chamcash
                         Console.ReadKey();
                         Console.Clear();
                         break;
+
                 }
             }
         }
@@ -252,9 +237,11 @@ namespace _01_Chamcash
 
 
 
-
-
-
+//produkter i kassasystemet ska lagras i fil [V]
+//hamnar i en loop när jag lägger till kampanjer. kan inte gå tillbaka från menyn. Lägg till Vill du fortsätta eller gå tillbaka
+//Går inte betala med stora bokstäver PAY [V]
+//Lägg till kr i uppvisning. (nykund)[V]
+//Fixa enhetsinmatning utan / i "lägga till produkter"
 //Inmatning av Produkt-Id och antal ska vara samma rad med mellanrum [V]
 // Angivna artiklar ska visas i konsollen medan man fyller på kvittot.[V]
 //lägg till felmedelande för inmatning av fel antal produkter. [V]
