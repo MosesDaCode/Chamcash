@@ -137,7 +137,7 @@ namespace _01_ChamCash
 
                                         File.AppendAllText(filePath, receiptText);
                                         Console.WriteLine(receiptText);
-                                        Console.WriteLine("\tKvittot har sparats, tryck på enter för att komma vidare.");
+                                        Console.WriteLine("Kvittot har sparats, tryck på enter för att komma vidare.");
 
                                         receipt.Clear();
                                     }
@@ -188,7 +188,7 @@ namespace _01_ChamCash
                                     Console.Clear();
                                     break;
                                 case "3":
-                                        campaignPrice.CreateCampaign();
+                                    campaignPrice.CreateCampaign();
                                     break;
                                 case "0":
                                     Console.Clear();
@@ -242,15 +242,18 @@ namespace _01_ChamCash
 
 
 
-//kalla på GetCampaignFromFile() i main för att lägga till kampanj i kvitto
-//krashar när man skriver ett produkt id i linearSearch
+
+//lägg till felhantering för att skapa ny produkt.
+//fixa så att _price får ett värde av kampanjpriset.
+//--kalla på GetCampaignFromFile() i main för att lägga till kampanj i kvitto
+//--krashar när man skriver ett produkt id i linearSearch[V]
 //ändra procent till helpris i kampanj.
-//--fixa input för kampanj filen
+//--fixa input för kampanj filen[V]
 //--produkter i kassasystemet ska lagras i fil [V]
-//hamnar i en loop när jag lägger till kampanjer. kan inte gå tillbaka från menyn. Lägg till Vill du fortsätta eller gå tillbaka
+//--hamnar i en loop när jag lägger till kampanjer. kan inte gå tillbaka från menyn.[V]
 //--Går inte betala med stora bokstäver PAY [V]
 //--Lägg till kr i uppvisning. (nykund)[V]
-//--Fixa enhetsinmatning utan / i "lägga till produkter"
+//--Fixa enhetsinmatning utan / i "lägga till produkter" [V]
 //--Inmatning av Produkt-Id och antal ska vara samma rad med mellanrum [V]
 //--Angivna artiklar ska visas i konsollen medan man fyller på kvittot.[V]
 //--lägg till felmedelande för inmatning av fel antal produkter. [V]

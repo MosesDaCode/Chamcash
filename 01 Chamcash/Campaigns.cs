@@ -43,7 +43,7 @@ namespace _01_Chamcash
             {
                 string[] campaignInfo = line.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-                if (campaignInfo.Length == 6)
+                if (campaignInfo.Length == 5)
                 {
                     string productId = campaignInfo[1];
 
@@ -100,7 +100,7 @@ namespace _01_Chamcash
         }
         public override string ToString()
         {
-            return $"Kampanj: {_productId}, {_startDate}, {_endDate}, {_price}% rabatt";
+            return $"Kampanj: {_productId}, {_startDate}, {_endDate}, {_price}";
         }
         public void CreateCampaign()
         {
@@ -156,12 +156,13 @@ namespace _01_Chamcash
                         }
                         else if (productToAddCampaign == "0")
                         {
-                            campaignManagmentRunning = false;
                             Console.Clear();
+                            campaignChoice = Menus.CampaignMenu();
+
                         }
                         else
                         {
-                            Console.WriteLine("Producten finns inte!");
+                            Console.WriteLine("Producten finns inte, försök igen!");
                         }
                         break;
                     case "2":
@@ -173,18 +174,21 @@ namespace _01_Chamcash
 
                         if (productToRemove == "0")
                         {
-                            campaignManagmentRunning = false;
                             Console.Clear();
+                            campaignChoice = Menus.CampaignMenu();
                         }
                         break;
                     case "0":
                         campaignManagmentRunning = false;
                         Console.Clear();
                         break;
+
                     default:
                         Console.WriteLine("Du har angett fel meny val, tryck på enter för att fortsätta!");
                         Console.ReadKey();
                         Console.Clear();
+                        campaignChoice = Menus.CampaignMenu();
+
                         break;
                 }
             }
