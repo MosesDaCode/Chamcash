@@ -1,0 +1,12 @@
+
+
+	KVITTO
+ 2023-11-05 20:07:06
+Kvitto:64
+---------------------------
+Produkt-ID: 300, Antal: 20
+---------------------------
+Bananer	20st	12.50kr /kg = 250kr
+Kampanjpris för Bananer: 20% rabatt = 237,5
+	Totalt: 237,50kr
+-------------------------- 

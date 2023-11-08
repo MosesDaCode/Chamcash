@@ -1,4 +1,4 @@
-﻿using _01_ChamCash;
+﻿using _01_Chamcash;
 using System.Globalization;
 using System.Text;
 
@@ -10,13 +10,10 @@ namespace _01_ChamCash
         static void Main(string[] args)
         {
 
-            //SerialNumber serialNumber = new SerialNumber();
-            //Console.OutputEncoding = Encoding.UTF8;
-            ProductEditor productSearch = new ProductEditor("../../../Products/ProductList.txt");
+            ProductEditor productEdit = new ProductEditor("../../../Products/ProductList.txt");
             Products products = new Products("../../../Products/ProductList.txt");
             List<string[]> productList = products.GetProductsFromFile(); // Initierar listan med produkter ifrån GetProducts metoden som är i ProductSearch klassen.
-            Campaign newCampaignPrice = new Campaign();
-            newCampaignPrice.AddActiveCampaign(newCampaignPrice);
+            Campaigns campaignPrice = new Campaigns();
 
             string removeCampaignString = null;
             string pay = null;
@@ -65,6 +62,7 @@ namespace _01_ChamCash
                             List<string[]> receipt = new List<string[]>();
 
 
+                            float totalPriceOfProduct = 0.0f;
                             bool productExist = true;
                             while (productExist)
                             {
@@ -75,11 +73,12 @@ namespace _01_ChamCash
                                 string inputIdAndAmountString = Console.ReadLine();
 
                                 string[] inputIdAndAmount = inputIdAndAmountString.Split(' ');
-
+                                
                                 if (inputIdAndAmount.Length == 2)
                                 {
                                     string inputId = inputIdAndAmount[0];
                                     int.TryParse(inputIdAndAmount[1], out inputAmount);
+
 
                                     searchResult = Products.LinearSearch(productList, inputId);
 
@@ -90,7 +89,7 @@ namespace _01_ChamCash
                                     }
                                     else
                                     {
-                                        receipt.Add(new string[] { inputAmount.ToString(), productList[searchResult][0], productList[searchResult][3], productList[searchResult][2] });
+                                        receipt.Add(new string[] { inputId,  inputAmount.ToString(), productList[searchResult][0], productList[searchResult][3], productList[searchResult][2] });
                                         receiptText += $"Produkt-ID: {inputId}, Antal: {inputAmount}\n";
 
                                         Console.WriteLine($"\t{productList[searchResult][0]} {productList[searchResult][3]}kr * {inputAmount}  ");
@@ -103,11 +102,11 @@ namespace _01_ChamCash
                                     receiptText += "---------------------------\n";
                                     foreach (var items in receipt)
                                     {
-                                        if (float.TryParse(items[0], NumberStyles.Float, CultureInfo.InvariantCulture, out float inputAmountFloat) &&
-                                            float.TryParse(items[2], NumberStyles.Float, CultureInfo.InvariantCulture, out float pricePerUnitFloat))
+                                        if (float.TryParse(items[1], NumberStyles.Float, CultureInfo.InvariantCulture, out float inputAmountFloat) &&
+                                            float.TryParse(items[3], NumberStyles.Float, CultureInfo.InvariantCulture, out float pricePerUnitFloat))
                                         {
-                                            float totalPriceOfProduct = inputAmountFloat * pricePerUnitFloat;
-                                            receiptText += $"{items[1]}\t{items[0]}st\t{items[2]}kr /{items[3]} = {totalPriceOfProduct}kr\n";
+                                            totalPriceOfProduct = inputAmountFloat * pricePerUnitFloat;
+                                            receiptText += $"{items[2]}\t{items[1]}st\t{items[3]}kr /{items[4]} = {totalPriceOfProduct}kr\n";
                                             totalSum += totalPriceOfProduct;
                                         }
 
@@ -115,12 +114,15 @@ namespace _01_ChamCash
                                         {
                                             Console.WriteLine("\tOgiltigt kvitto!!");
                                         }
-                                        Campaign validCampaign = newCampaignPrice._campaignPrices.Find(campaign => campaign._productId == items[1] && DateTime.Now >= campaign._startDate && DateTime.Now <= campaign._endDate);
+
+                                        campaignPrice.GetCampaignFromFile();
+                                        var validCampaign = campaignPrice._campaignPrices.Find(campaign => campaign._productId == items[0] && DateOnly.FromDateTime(DateTime.Now) >= campaign._startDate && DateOnly.FromDateTime(DateTime.Now) <= campaign._endDate);
+
                                         if (validCampaign != null)
                                         {
-                                            float discount = (float.Parse(items[2], CultureInfo.InvariantCulture) * validCampaign._price);
-                                            receiptText += $"Kampanjpris för {validCampaign._productId}: {validCampaign._price} kr\n";
-                                            totalSum -= discount;
+                                            float discount = totalPriceOfProduct / campaignPrice._price;
+                                            float discountSum = totalSum -= discount;
+                                            receiptText += $"Kampanjpris för {items[2]}: {campaignPrice._price}% rabatt = {discountSum}";
                                         }
                                         else
                                         {
@@ -129,7 +131,7 @@ namespace _01_ChamCash
 
                                     }
 
-                                    receiptText += $"\n\tTotalt: {totalSum}kr\n-------------------------- ";
+                                    receiptText += $"\n\tTotalt: {totalSum:0.00}kr\n-------------------------- ";
                                     if (inputIdAndAmountString.ToUpper() == "PAY")
                                     {
 
@@ -178,15 +180,15 @@ namespace _01_ChamCash
                             switch (adminChoice)
                             {
                                 case "1":
-                                    productSearch.CreateNewProduct(productList);
+                                    productEdit.CreateNewProduct(productList);
                                     Console.Clear();
                                     break;
                                 case "2":
-                                    productSearch.EditProduct(productList);
+                                    productEdit.EditProduct(productList);
                                     Console.Clear();
                                     break;
                                 case "3":
-                                    newCampaignPrice.CampainManagment();
+                                        campaignPrice.CreateCampaign();
                                     break;
                                 case "0":
                                     Console.Clear();
@@ -237,18 +239,25 @@ namespace _01_ChamCash
 
 
 
-//produkter i kassasystemet ska lagras i fil [V]
+
+
+
+//kalla på GetCampaignFromFile() i main för att lägga till kampanj i kvitto
+//krashar när man skriver ett produkt id i linearSearch
+//ändra procent till helpris i kampanj.
+//--fixa input för kampanj filen
+//--produkter i kassasystemet ska lagras i fil [V]
 //hamnar i en loop när jag lägger till kampanjer. kan inte gå tillbaka från menyn. Lägg till Vill du fortsätta eller gå tillbaka
-//Går inte betala med stora bokstäver PAY [V]
-//Lägg till kr i uppvisning. (nykund)[V]
-//Fixa enhetsinmatning utan / i "lägga till produkter"
-//Inmatning av Produkt-Id och antal ska vara samma rad med mellanrum [V]
-// Angivna artiklar ska visas i konsollen medan man fyller på kvittot.[V]
-//lägg till felmedelande för inmatning av fel antal produkter. [V]
-// Kvitto ska sparas i annan fil med tid och datum. [V]
-//lägg till toUpper. [V]
+//--Går inte betala med stora bokstäver PAY [V]
+//--Lägg till kr i uppvisning. (nykund)[V]
+//--Fixa enhetsinmatning utan / i "lägga till produkter"
+//--Inmatning av Produkt-Id och antal ska vara samma rad med mellanrum [V]
+//--Angivna artiklar ska visas i konsollen medan man fyller på kvittot.[V]
+//--lägg till felmedelande för inmatning av fel antal produkter. [V]
+//--Kvitto ska sparas i annan fil med tid och datum. [V]
+//--lägg till toUpper. [V]
 //styla meny bättre
-// Lägg till DateOnly istället för datetime för kvittofilen. [V]
+//--Lägg till DateOnly istället för datetime för kvittofilen. [V]
 
 // KassaSystemet
 // 0. Data Seeding

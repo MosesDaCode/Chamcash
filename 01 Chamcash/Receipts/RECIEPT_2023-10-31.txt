@@ -1,0 +1,45 @@
+
+
+	KVITTO
+ 2023-10-31 16:00:56
+Kvitto:49
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 3
+Produkt-ID: 302, Antal: 3
+Produkt-ID: 303, Antal: 4
+Produkt-ID: 304, Antal: 3
+Produkt-ID: 305, Antal: 3
+Produkt-ID: 306, Antal: 4
+Produkt-ID: 307, Antal: 3
+Produkt-ID: 308, Antal: 4
+Produkt-ID: 309, Antal: 4
+Produkt-ID: 310, Antal: 4
+Produkt-ID: 311, Antal: 5
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kaffe	3st	35.50kr /st = 106,5kr
+Choklad	3st	15.00kr /st = 45kr
+Mjölk	4st	19.50kr /st = 78kr
+Snus	3st	49kr /st = 147kr
+Läsk	3st	94.50kr /kg = 283,5kr
+Korv	4st	35kr /st = 140kr
+Kött	3st	89kr /kg = 267kr
+Parfym	4st	78.50kr /st = 314kr
+Vatten	4st	19.90kr /st = 79,6kr
+Mango	4st	40kr /st = 160kr
+Skinka	5st	59.90kr /st = 299,5kr
+
+	Totalt: 1945,1kr
+-------------------------- 
+
+	KVITTO
+ 2023-10-31 22:34:26
+Kvitto:50
+---------------------------
+Produkt-ID: 300, Antal: 3
+---------------------------
+Bananer	3st	12.50kr /kg = 37,5kr
+
+	Totalt: 37,5kr
+-------------------------- 

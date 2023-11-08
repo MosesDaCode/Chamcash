@@ -1,0 +1,161 @@
+
+
+	KVITTO
+ 2023-11-02 11:59:30
+Kvitto:51
+---------------------------
+Produkt-ID: 300, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+
+	Totalt: 25kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:11:08
+Kvitto:52
+---------------------------
+Produkt-ID: 300, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+
+	Totalt: 25kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:11:36
+Kvitto:53
+---------------------------
+Produkt-ID: 300, Antal: 3
+---------------------------
+Bananer	3st	12.50kr /kg = 37,5kr
+Kampanjpris för 300: 10 kr
+
+	Totalt: -87,5kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:16:53
+Kvitto:54
+---------------------------
+Produkt-ID: 300, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+
+	Totalt: 25kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:17:13
+Kvitto:55
+---------------------------
+Produkt-ID: 300, Antal: 3
+---------------------------
+Bananer	3st	12.50kr /kg = 37,5kr
+Kampanjpris för Bananer: 10 kr
+ /kg
+	Totalt: 35kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:24:19
+Kvitto:56
+---------------------------
+Produkt-ID: 300, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 10% rabatt
+	Totalt: 22,5kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:25:20
+Kvitto:57
+---------------------------
+Produkt-ID: 300, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 10% rabatt
+	Totalt: 22,5kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:25:54
+Kvitto:58
+---------------------------
+Produkt-ID: 300, Antal: 4
+Produkt-ID: 304, Antal: 0
+Produkt-ID: 304, Antal: 2
+Produkt-ID: 305, Antal: 2
+---------------------------
+Bananer	4st	12.50kr /kg = 50kr
+Kampanjpris för Bananer: 20% rabattSnus	0st	49kr /st = 0kr
+Snus	2st	49kr /st = 98kr
+Läsk	2st	94.50kr /kg = 189kr
+
+	Totalt: 334,5kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:26:49
+Kvitto:59
+---------------------------
+Produkt-ID: 300, Antal: 4
+Produkt-ID: 304, Antal: 3
+Produkt-ID: 302, Antal: 3
+Produkt-ID: 300, Antal: 5
+---------------------------
+Bananer	4st	12.50kr /kg = 50kr
+Kampanjpris för Bananer: 20% rabatt
+Snus	3st	49kr /st = 147kr
+Godis	3st	98.90kr /kg = 296,7kr
+Bananer	5st	12.50kr /kg = 62,5kr
+Kampanjpris för Bananer: 20% rabatt
+
+	Totalt: 550,575kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:43:32
+Kvitto:60
+---------------------------
+Produkt-ID: 300, Antal: 4
+---------------------------
+Bananer	4st	12.50kr /kg = 50kr
+Kampanjpris för Bananer: 20% rabatt
+ = 47,5
+	Totalt: 47,5kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:47:47
+Kvitto:61
+---------------------------
+Produkt-ID: 300, Antal: 3
+---------------------------
+Bananer	3st	12.50kr /kg = 37,5kr
+Kampanjpris för Bananer: 20% rabatt = 35,625
+	Totalt: 35,625kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:51:06
+Kvitto:62
+---------------------------
+Produkt-ID: 300, Antal: 4
+---------------------------
+Bananer	4st	12.50kr /kg = 50kr
+Kampanjpris för Bananer: 20% rabatt = 47,5
+	Totalt: 47,5kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-02 13:51:17
+Kvitto:63
+---------------------------
+Produkt-ID: 300, Antal: 3
+---------------------------
+Bananer	3st	12.50kr /kg = 37,5kr
+Kampanjpris för Bananer: 20% rabatt = 35,625
+	Totalt: 35,625kr
+-------------------------- 

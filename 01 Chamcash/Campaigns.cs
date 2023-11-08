@@ -7,43 +7,87 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace _01_ChamCash
+namespace _01_Chamcash
 {
-    class Campaign : Products
+    class Campaigns : Products
     {
-
-        public List<Campaign> _campaignPrices { get; } = new List<Campaign>();
+        public List<Campaigns> _campaignPrices { get; set; } = new List<Campaigns>();
         private List<string[]> _products;
+        public static string _campaignFilePath = "../../../Campaigns/CampaignList.txt";
+
 
         public string _productId { get; set; }
-        public DateTime _startDate { get; set; }
-        public DateTime _endDate { get; set; }
+        public DateOnly _startDate { get; set; }
+        public DateOnly _endDate { get; set; }
         public float _price { get; set; }
 
-        public Campaign(string productId, DateTime startDate, DateTime endDate, float price, string productFilePath) : base(productFilePath)
+
+
+        public Campaigns(string productId, DateOnly startDate, DateOnly endDate, float price, string productFilePath) : base(productFilePath)
         {
             _productId = productId;
             _startDate = startDate;
             _endDate = endDate;
             _price = price;
         }
-        public Campaign() : base("../../../Products/ProductList.txt")
+        public Campaigns() : base("../../../Products/ProductList.txt")
         {
             _products = new List<string[]>();
         }
 
-        public void AddActiveCampaign(Campaign campaign)
+        public void GetCampaignFromFile()
+        {
+            string[] campaignlines = File.ReadAllLines(_campaignFilePath);
+
+            foreach (string line in campaignlines)
+            {
+                string[] campaignInfo = line.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                if (campaignInfo.Length == 6)
+                {
+                    string productId = campaignInfo[1];
+
+                    if (DateOnly.TryParse(campaignInfo[2].Trim(), out DateOnly startDate) &&
+                        (DateOnly.TryParse(campaignInfo[3].Trim(), out DateOnly endDate) &&
+                        (float.TryParse(campaignInfo[4].Trim(), out float price))))
+                    {
+                        Campaigns campaign = new Campaigns(productId, startDate, endDate, price, _productFilePath);
+                        _campaignPrices.Add(campaign);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Felaktig information i filen: " + line);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Felaktig information i filen: " + line);
+
+                }
+            }
+        }
+        public void AddCampaignToFile(List<Campaigns> newCampaign)
+        {
+                string line = String.Join(", ", newCampaign);
+
+                File.AppendAllText(_campaignFilePath, line);
+
+            newCampaign.Clear();
+            
+        }
+        public void AddActiveCampaign(Campaigns campaign)
         {
             _campaignPrices.Add(campaign);
+            AddCampaignToFile(_campaignPrices);
         }
         public void RemoveActiveCampaign(string productToRemove)
         {
-            DateTime currentDate = DateTime.Now;
+            DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
             _campaignPrices.RemoveAll(campaign => campaign._endDate < currentDate && campaign._productId == productToRemove);
         }
         public void RemoveCampaign(string removeCampaignstring)
         {
-            Campaign campaignToRemove = _campaignPrices.Find(campaign => campaign._productId == removeCampaignstring);
+            Campaigns campaignToRemove = _campaignPrices.Find(campaign => campaign._productId == removeCampaignstring);
             if (campaignToRemove != null)
             {
                 _campaignPrices.Remove(campaignToRemove);
@@ -54,7 +98,11 @@ namespace _01_ChamCash
                 Console.WriteLine("En kampanj på det angivna product-ID existerar inte!");
             }
         }
-        public void CampainManagment()
+        public override string ToString()
+        {
+            return $"Kampanj: {_productId}, {_startDate}, {_endDate}, {_price}% rabatt";
+        }
+        public void CreateCampaign()
         {
             var campaignChoice = Menus.CampaignMenu();
             var products = new Products("../../../Products/ProductList.txt");
@@ -73,21 +121,23 @@ namespace _01_ChamCash
                         if (searchresult != -1)
                         {
                             Console.Write("Ange ett start datum för kampanjen (åååå-MM-dd): ");
-                            if (DateTime.TryParse(Console.ReadLine(), out DateTime startDate))
+                            if (DateOnly.TryParse(Console.ReadLine(), out DateOnly startDate))
                             {
                                 Console.Write("Ange slut datum för kampanjen (åååå-MM-dd): ");
-                                if (DateTime.TryParse(Console.ReadLine(), out DateTime endDate))
+                                if (DateOnly.TryParse(Console.ReadLine(), out DateOnly endDate))
                                 {
-                                    Console.Write("Ange ett kampanjpris: ");
+                                    Console.Write("Lägg till en rabatt i procent (%): ");
                                     if (float.TryParse(Console.ReadLine(), out float campaignPrice))
                                     {
-                                        Campaign newCampaignPrice = new Campaign(productToAddCampaign, startDate, endDate, campaignPrice, "../../../Products/ProductList.txt");
-                                        _campaignPrices.Add(newCampaignPrice);
-                                        if (newCampaignPrice._endDate >= DateTime.Now)
+                                        Campaigns newCampaignPrice = new Campaigns(productToAddCampaign, startDate, endDate, campaignPrice, "../../../Products/ProductList.txt");
+                                        if (newCampaignPrice._endDate >= DateOnly.FromDateTime(DateTime.Now))
                                         {
                                             AddActiveCampaign(newCampaignPrice);
                                         }
                                         Console.WriteLine("wohoo kampanjpriser har uppdaterats!!");
+                                        campaignManagmentRunning = false;
+                                        Console.ReadKey();
+                                        Console.Clear();
                                     }
                                     else
                                     {
@@ -129,6 +179,11 @@ namespace _01_ChamCash
                         break;
                     case "0":
                         campaignManagmentRunning = false;
+                        Console.Clear();
+                        break;
+                    default:
+                        Console.WriteLine("Du har angett fel meny val, tryck på enter för att fortsätta!");
+                        Console.ReadKey();
                         Console.Clear();
                         break;
                 }

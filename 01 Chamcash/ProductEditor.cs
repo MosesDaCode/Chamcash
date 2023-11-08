@@ -1,5 +1,4 @@
-﻿using _01_ChamCash;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +8,7 @@ namespace _01_ChamCash
 {
     public class ProductEditor : Products
     {
-        public ProductEditor(string productFilePatch) : base(productFilePatch)
+        public ProductEditor(string productFilePath) : base(productFilePath)
         {
 
         }
@@ -31,7 +30,7 @@ namespace _01_ChamCash
                 Console.Write("\tAnge ett nytt pris: ");
                 string newPrice = Console.ReadLine();
 
-                Console.Write("\tAnge en ny enhet emellan st eller kg: ");
+                Console.Write("\tAnge antingen st eller kg: ");
                 string newUnit = Console.ReadLine();
 
                 string[] editedProduct = { newName, oldProductId, newUnit, newPrice };
@@ -53,7 +52,7 @@ namespace _01_ChamCash
                     File.WriteAllLines(_productFilePath, lines);
                 }
 
-                Console.WriteLine("Produkten har updaterats!");
+                Console.WriteLine("\tProdukten har updaterats!");
                 Console.WriteLine("\tTryck på enter för att fortsätta... ");
                 Console.ReadKey();
                 Console.Clear();
@@ -85,7 +84,7 @@ namespace _01_ChamCash
                 Console.Write("\tAnge ett pris: ");
                 string productprice = Console.ReadLine();
 
-                Console.Write("\tAnge en enhet emellan st eller kg: ");
+                Console.Write("\tAnge antingen st eller kg: ");
                 string productUnit = Console.ReadLine();
 
                 string[] newProduct = { productName, productId, productUnit, productprice };
