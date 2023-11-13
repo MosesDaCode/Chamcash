@@ -15,9 +15,10 @@ namespace _01_ChamCash
 
         public void EditProduct(List<string[]> productToEdit)
         {
-            Console.WriteLine("\t---------------------------");
-            Console.WriteLine("\t||Redigering av produkter||");
-            Console.WriteLine("\t---------------------------\n");
+            Console.WriteLine("\t-------------------------------");
+            Console.WriteLine("\t||Redigering av produkter    ||");
+            Console.WriteLine("\t||Ange 0 för att gå tillbaka ||");
+            Console.WriteLine("\t-------------------------------\n");
 
             Console.Write("\tAnge Produkt-ID för produkten som ska redigeras: ");
             string oldProductId = Console.ReadLine();
@@ -26,72 +27,142 @@ namespace _01_ChamCash
             {
                 Console.Write("\tAnge ett nytt namn: ");
                 string newName = Console.ReadLine();
-
-                Console.Write("\tAnge ett nytt pris: ");
-                string newPrice = Console.ReadLine();
-
-                Console.Write("\tAnge antingen st eller kg: ");
-                string newUnit = Console.ReadLine();
-
-                string[] editedProduct = { newName, oldProductId, newUnit, newPrice };
-
-                int index = _productList.FindIndex(product => product[1] == oldProductId);
-
-                if (searchResult != -1)
+                if (newName != "0")
                 {
-                    _productList[index][0] = editedProduct[0];
-                    _productList[index][3] = editedProduct[3];
-                    _productList[index][2] = editedProduct[2];
+                    Console.Write("\tAnge ett nytt pris: ");
+                    string newPrice = Console.ReadLine();
+                    if (newPrice != "0")
+                    {
+                        Console.Write("\tAnge antingen st eller kg: ");
+                        string newUnit = Console.ReadLine();
+                        if (newUnit != "0")
+                        {
+                            string[] editedProduct = { newName, oldProductId, newUnit, newPrice };
 
-                    string updatedLine = string.Join(", ", _productList[index]);
+                            int index = _productList.FindIndex(product => product[1] == oldProductId);
 
-                    List<string> lines = File.ReadAllLines(_productFilePath).ToList();
+                            if (searchResult != -1)
+                            {
+                                _productList[index][0] = editedProduct[0];
+                                _productList[index][3] = editedProduct[3];
+                                _productList[index][2] = editedProduct[2];
 
-                    lines[index] = updatedLine;
+                                string updatedLine = string.Join(", ", _productList[index]);
 
-                    File.WriteAllLines(_productFilePath, lines);
+                                List<string> lines = File.ReadAllLines(_productFilePath).ToList();
+
+                                lines[index] = updatedLine;
+
+                                File.WriteAllLines(_productFilePath, lines);
+                            }
+
+                            Console.WriteLine("\tProdukten har updaterats!");
+                            Console.WriteLine("\tTryck på enter för att fortsätta... ");
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
 
-                Console.WriteLine("\tProdukten har updaterats!");
-                Console.WriteLine("\tTryck på enter för att fortsätta... ");
-                Console.ReadKey();
-                Console.Clear();
 
+            }
+            else if (oldProductId == "0")
+            {
+                Console.Clear();
             }
             else
             {
-                Console.WriteLine("Produkt-ID hittades ej, försökt igen!");
+                Console.WriteLine("Produkt-ID hittades ej, tryck på enter och försökt igen!");
+                Console.ReadKey();
+                Console.Clear();
+                EditProduct(_productList);
             }
 
         }
-        
+
         public void CreateNewProduct(List<string[]> product)
         {
-            Console.WriteLine("\t-------------------------");
-            Console.WriteLine("\t||Lägg till en produkt ||");
-            Console.WriteLine("\t-----------------------\n");
+            Console.WriteLine("\t-------------------------------");
+            Console.WriteLine("\t||Lägg till en produkt       ||");
+            Console.WriteLine("\t||Ange 0 för att gå tillbaka ||");
+            Console.WriteLine("\t-------------------------------\n");
             Console.Write("\n\n\tAnge produkt-ID: ");
             string productId = Console.ReadLine();
+            string productName = null;
+            string productPrice = null;
+            string productUnit = null;
             int searchResult = LinearSearch(product, productId);
-            if (searchResult == -1)
+            if (searchResult == -1 && productId != "0")
             {
-
                 Console.Write("\tAnge produktens namn: ");
-                string productName = Console.ReadLine();
+                productName = Console.ReadLine();
+
+                if (productName != "0")
+                {
+                    Console.Write("\tAnge ett pris: ");
+                    productPrice = Console.ReadLine();
+                    if (productPrice != "0")
+                    {
+                        Console.Write("\tAnge antingen st eller kg: ");
+                        productUnit = Console.ReadLine();
+                        if (productUnit != "0")
+                        {
+                            string[] newProduct = { productName, productId, productUnit, productPrice };
+                            SaveProductsToFile(newProduct);
+
+                            Console.WriteLine("\tProdukten har sparats! Tryck på enter för att fortsätta.");
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
 
 
-
-                Console.Write("\tAnge ett pris: ");
-                string productprice = Console.ReadLine();
-
-                Console.Write("\tAnge antingen st eller kg: ");
-                string productUnit = Console.ReadLine();
-
-                string[] newProduct = { productName, productId, productUnit, productprice };
-                SaveProductsToFile(newProduct);
-
-                Console.WriteLine("\tProdukten har sparats! Tryck på enter för att fortsätta.");
+            }
+            else if (productId == "0")
+            {
+                Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
                 Console.ReadKey();
+                Console.Clear();
             }
             else
             {
