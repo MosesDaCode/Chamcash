@@ -10,10 +10,12 @@ namespace _01_ChamCash
         static void Main(string[] args)
         {
 
-            ProductEditor productEdit = new ProductEditor("../../../Products/ProductList.txt");
-            Products products = new Products("../../../Products/ProductList.txt");
-            List<string[]> productList = products.GetProductsFromFile(); // Initierar listan med produkter ifrån GetProducts metoden som är i ProductSearch klassen.
-            Campaigns campaignPrice = new Campaigns();
+            var productEdit = new ProductEditor("../../../Products/ProductList.txt");
+            var products = new Products("../../../Products/ProductList.txt");
+            var productList = products.GetProductsFromFile(); // Initierar listan med produkter ifrån GetProducts metoden som är i ProductSearch klassen.
+            var campaignPrice = new Campaigns();
+            campaignPrice.GetCampaignFromFile();
+            campaignPrice.RemoveExpiredCampaign();
 
             string removeCampaignString = null;
             string pay = null;
@@ -72,6 +74,7 @@ namespace _01_ChamCash
                                 Console.Write("\n\tAnge Produkt-ID och antal med mellanslag: ");
                                 string inputIdAndAmountString = Console.ReadLine();
 
+                                
                                 string[] inputIdAndAmount = inputIdAndAmountString.Split(' ');
                                 
                                 if (inputIdAndAmount.Length == 2)
@@ -116,13 +119,29 @@ namespace _01_ChamCash
                                         }
 
                                         campaignPrice.GetCampaignFromFile();
-                                        var validCampaign = campaignPrice._campaignPrices.Find(campaign => campaign._productId == items[0] && DateOnly.FromDateTime(DateTime.Now) >= campaign._startDate && DateOnly.FromDateTime(DateTime.Now) <= campaign._endDate);
-
+                                        var validCampaign = campaignPrice._campaignPrices.Find(campaign => campaign._productId == items[0] &&
+                                        DateOnly.FromDateTime(DateTime.Now) >= campaign._startDate && DateOnly.FromDateTime(DateTime.Now) <= campaign._endDate);
+                                        
                                         if (validCampaign != null)
                                         {
-                                            float discount = totalPriceOfProduct / campaignPrice._price;
-                                            float discountSum = totalSum -= discount;
-                                            receiptText += $"Kampanjpris för {items[2]}: {campaignPrice._price}% rabatt = {discountSum}";
+                                            float validCampaignPrice = validCampaign._price;
+
+                                            if (validCampaignPrice == 0.0f)
+                                            {
+                                                float discount = (float)totalPriceOfProduct * 0.5f;
+
+                                                float totalDiscount = discount * (inputAmountFloat / 2.0f);
+                                                float discountSum = totalSum - totalDiscount; 
+                                                receiptText += $"Kampanjpris för {items[2]}: 2 för 1 = {discountSum}\n\n";
+                                                totalSum -= discountSum;
+                                            }
+                                            else
+                                            {
+                                            float discount = (float)totalPriceOfProduct - ((float)totalPriceOfProduct * Convert.ToSingle(validCampaignPrice / 100));
+                                            float discountSum = totalPriceOfProduct -= discount;
+                                            receiptText += $"Kampanjpris för {items[2]}: {validCampaignPrice}% rabatt = {discount}\n\n";
+                                            totalSum -= discountSum;
+                                            }
                                         }
                                         else
                                         {
@@ -188,7 +207,7 @@ namespace _01_ChamCash
                                     Console.Clear();
                                     break;
                                 case "3":
-                                    campaignPrice.CreateCampaign();
+                                    campaignPrice.CampaignManagment();
                                     break;
                                 case "0":
                                     Console.Clear();
@@ -243,11 +262,16 @@ namespace _01_ChamCash
 
 
 
-//lägg till felhantering för att skapa ny produkt.
-//fixa så att _price får ett värde av kampanjpriset.
+
+
+//--Fixa så man kan gå tillbaka i ta bort kampanjer menyval.[V]
+//--Fixa ta bort kampanjer metod så att den tar bort utgången kampanj automatiskt[V]
+//--fixa så att kampanjpriset sätts i _price property i Campaigns.[V]
+//--lägg till felhantering för att skapa ny produkt.[V]
+//--fixa så att _price får ett värde av kampanjpriset.[V]
 //--kalla på GetCampaignFromFile() i main för att lägga till kampanj i kvitto
 //--krashar när man skriver ett produkt id i linearSearch[V]
-//ändra procent till helpris i kampanj.
+//Lägg till olika kampanjer
 //--fixa input för kampanj filen[V]
 //--produkter i kassasystemet ska lagras i fil [V]
 //--hamnar i en loop när jag lägger till kampanjer. kan inte gå tillbaka från menyn.[V]
@@ -259,7 +283,7 @@ namespace _01_ChamCash
 //--lägg till felmedelande för inmatning av fel antal produkter. [V]
 //--Kvitto ska sparas i annan fil med tid och datum. [V]
 //--lägg till toUpper. [V]
-//styla meny bättre
+//--styla meny bättre [V]
 //--Lägg till DateOnly istället för datetime för kvittofilen. [V]
 
 // KassaSystemet

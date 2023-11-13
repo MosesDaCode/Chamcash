@@ -57,7 +57,20 @@ namespace _01_ChamCash
             string campaignChoice = Console.ReadLine();
             return campaignChoice;
         }
-
+        public static string AddCampaignChoice()
+        {
+            Console.WriteLine("\t-------------------------");
+            Console.WriteLine("\t||Kampanjval           ||");
+            Console.WriteLine("\t-------------------------");
+            Console.WriteLine("\t||1. Procent kampanj   ||");
+            Console.WriteLine("\t||2. 2 för 1 kampanj   ||");
+            Console.WriteLine("\t||3. Sänkt pris kampanj||");
+            Console.WriteLine("\t||0. Gå tillbaka       ||");
+            Console.WriteLine("\t-----------------------\n");
+            Console.Write("Ange menyval: ");
+            string addCampaignChoice = Console.ReadLine();
+            return addCampaignChoice;
+        }
 
     }
 }

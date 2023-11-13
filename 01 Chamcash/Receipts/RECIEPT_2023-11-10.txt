@@ -1,0 +1,290 @@
+
+
+	KVITTO
+ 2023-11-10 13:44:23
+Kvitto:82
+---------------------------
+Produkt-ID: 300, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 23,75
+	Totalt: 23,75kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 13:45:36
+Kvitto:83
+---------------------------
+Produkt-ID: 304, Antal: 3
+---------------------------
+Snus	3st	49kr /st = 147kr
+Kampanjpris för Snus: 23% rabatt = 140,60869
+	Totalt: 140,61kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 13:45:54
+Kvitto:84
+---------------------------
+Produkt-ID: 306, Antal: 4
+---------------------------
+Korv	4st	35kr /st = 140kr
+Kampanjpris för Korv: 10% rabatt = 126
+	Totalt: 126,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 13:46:33
+Kvitto:85
+---------------------------
+Produkt-ID: 302, Antal: 2
+---------------------------
+Godis	2st	98.90kr /kg = 197,8kr
+
+	Totalt: 197,80kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 13:50:55
+Kvitto:86
+---------------------------
+Produkt-ID: 305, Antal: 3
+---------------------------
+Kex	3st	13.90kr /st = 41,699997kr
+
+	Totalt: 41,70kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:08:45
+Kvitto:87
+---------------------------
+Produkt-ID: 301, Antal: 2
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 302, Antal: 3
+---------------------------
+Kaffe	2st	35.50kr /st = 71kr
+Kampanjpris för Kaffe: 60% rabatt = 69,816666Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 93,566666Godis	3st	98.90kr /kg = 296,7kr
+Kampanjpris för Godis: 50% rabatt = 384,33267
+	Totalt: 384,33kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:10:30
+Kvitto:88
+---------------------------
+Produkt-ID: 301, Antal: 2
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 302, Antal: 2
+---------------------------
+Kaffe	2st	35.50kr /st = 71kr
+Kampanjpris för Kaffe: 60% rabatt = 69,816666Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 93,566666Godis	2st	98.90kr /kg = 197,8kr
+Kampanjpris för Godis: 50% rabatt = 287,41068
+	Totalt: 287,41kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:12:00
+Kvitto:89
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 3
+Produkt-ID: 304, Antal: 3
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 23,75Kaffe	3st	35.50kr /st = 106,5kr
+Kampanjpris för Kaffe: 60% rabatt = 128,475Snus	3st	49kr /st = 147kr
+Kampanjpris för Snus: 23% rabatt = 269,0837
+	Totalt: 269,08kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:15:15
+Kvitto:89
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 2
+Produkt-ID: 302, Antal: 3
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 23,75
+Kaffe	2st	35.50kr /st = 71kr
+Kampanjpris för Kaffe: 60% rabatt = 93,566666
+Godis	3st	98.90kr /kg = 296,7kr
+Kampanjpris för Godis: 50% rabatt = 384,33267
+
+	Totalt: 384,33kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:16:04
+Kvitto:90
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 0
+Produkt-ID: 301, Antal: 2
+Produkt-ID: 302, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 23,75
+
+Kaffe	0st	35.50kr /st = 0kr
+Kampanjpris för Kaffe: 60% rabatt = 23,75
+
+Kaffe	2st	35.50kr /st = 71kr
+Kampanjpris för Kaffe: 60% rabatt = 93,566666
+
+Godis	2st	98.90kr /kg = 197,8kr
+Kampanjpris för Godis: 50% rabatt = 287,41068
+
+
+	Totalt: 287,41kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:18:49
+Kvitto:91
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 2
+Produkt-ID: 302, Antal: 3
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 23,75
+
+Kaffe	2st	35.50kr /st = 71kr
+Kampanjpris för Kaffe: 60% rabatt = 69,816666
+
+Godis	3st	98.90kr /kg = 296,7kr
+Kampanjpris för Godis: 50% rabatt = 290,76602
+
+
+	Totalt: 392,70kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:24:30
+Kvitto:92
+---------------------------
+Produkt-ID: 300, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 5
+
+
+	Totalt: 25,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:25:27
+Kvitto:93
+---------------------------
+Produkt-ID: 300, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 20
+
+
+	Totalt: 25,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:25:38
+Kvitto:94
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 20
+
+Kaffe	2st	35.50kr /st = 71kr
+Kampanjpris för Kaffe: 60% rabatt = 28,399998
+
+
+	Totalt: 96,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:27:16
+Kvitto:95
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 2
+Produkt-ID: 302, Antal: 2
+Produkt-ID: 303, Antal: 2
+Produkt-ID: 304, Antal: 2
+Produkt-ID: 305, Antal: 2
+Produkt-ID: 306, Antal: 2
+Produkt-ID: 307, Antal: 2
+Produkt-ID: 308, Antal: 2
+Produkt-ID: 309, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 20
+
+Kaffe	2st	35.50kr /st = 71kr
+Kampanjpris för Kaffe: 60% rabatt = 28,399998
+
+Godis	2st	98.90kr /kg = 197,8kr
+Kampanjpris för Godis: 50% rabatt = 98,9
+
+Mjölk	2st	19.50kr /st = 39kr
+Snus	2st	49kr /st = 98kr
+Kampanjpris för Snus: 23% rabatt = 75,46
+
+Kex	2st	13.90kr /st = 27,8kr
+Kampanjpris för Kex: 40% rabatt = 16,68
+
+Korv	2st	35kr /st = 70kr
+Kampanjpris för Korv: 10% rabatt = 63
+
+Kött	2st	89kr /kg = 178kr
+Parfym	2st	78.50kr /st = 157kr
+Vatten	2st	19.90kr /st = 39,8kr
+
+	Totalt: 903,40kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-10 14:32:56
+Kvitto:96
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 2
+Produkt-ID: 302, Antal: 2
+Produkt-ID: 303, Antal: 2
+Produkt-ID: 304, Antal: 2
+Produkt-ID: 305, Antal: 2
+Produkt-ID: 306, Antal: 2
+Produkt-ID: 307, Antal: 2
+Produkt-ID: 308, Antal: 2
+Produkt-ID: 309, Antal: 2
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 20% rabatt = 20
+
+Kaffe	2st	35.50kr /st = 71kr
+Kampanjpris för Kaffe: 60% rabatt = 28,399998
+
+Godis	2st	98.90kr /kg = 197,8kr
+Kampanjpris för Godis: 50% rabatt = 98,9
+
+Mjölk	2st	19.50kr /st = 39kr
+Snus	2st	49kr /st = 98kr
+Kampanjpris för Snus: 23% rabatt = 75,46
+
+Kex	2st	13.90kr /st = 27,8kr
+Kampanjpris för Kex: 40% rabatt = 16,68
+
+Korv	2st	35kr /st = 70kr
+Kampanjpris för Korv: 10% rabatt = 63
+
+Kött	2st	89kr /kg = 178kr
+Parfym	2st	78.50kr /st = 157kr
+Vatten	2st	19.90kr /st = 39,8kr
+
+	Totalt: 716,24kr
+-------------------------- 

@@ -1,0 +1,96 @@
+
+
+	KVITTO
+ 2023-11-13 12:36:37
+Kvitto:101
+---------------------------
+Produkt-ID: 305, Antal: 2
+---------------------------
+Kex	2st	13.90kr /st = 27,8kr
+Kampanjpris för Kex: 0% rabatt = 27,8
+
+
+	Totalt: 27,80kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-13 13:36:14
+Kvitto:102
+---------------------------
+Produkt-ID: 305, Antal: 2
+---------------------------
+Kex	2st	13.90kr /st = 27,8kr
+Kampanjpris för Kex: 2 för 1 = 13,9
+
+
+	Totalt: 13,90kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-13 13:36:29
+Kvitto:103
+---------------------------
+Produkt-ID: 305, Antal: 3
+---------------------------
+Kex	3st	13.90kr /st = 41,699997kr
+Kampanjpris för Kex: 2 för 1 = 20,849998
+
+
+	Totalt: 20,85kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-13 13:37:04
+Kvitto:104
+---------------------------
+Produkt-ID: 300, Antal: 3
+Produkt-ID: 305, Antal: 2
+---------------------------
+Bananer	3st	12.50kr /kg = 37,5kr
+Kampanjpris för Bananer: 25% rabatt = 28,125
+
+Kex	2st	13.90kr /st = 27,8kr
+Kampanjpris för Kex: 2 för 1 = 13,9
+
+
+	Totalt: 42,03kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-13 14:35:43
+Kvitto:105
+---------------------------
+Produkt-ID: 305, Antal: 3
+---------------------------
+Kex	3st	13.90kr /st = 41,699997kr
+Kampanjpris för Kex: 2 för 1 = 20,849998
+
+
+	Totalt: 20,85kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-13 14:44:40
+Kvitto:106
+---------------------------
+Produkt-ID: 305, Antal: 2
+---------------------------
+Kex	2st	13.90kr /st = 27,8kr
+Kampanjpris för Kex: 2 för 1 = 13,9
+
+
+	Totalt: 13,90kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-13 14:47:14
+Kvitto:107
+---------------------------
+Produkt-ID: 305, Antal: 3
+---------------------------
+Kex	3st	13.90kr /st = 41,699997kr
+Kampanjpris för Kex: 2 för 1 = 10,424999
+
+
+	Totalt: 31,28kr
+-------------------------- 
