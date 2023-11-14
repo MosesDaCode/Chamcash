@@ -10,10 +10,14 @@ namespace _01_ChamCash
         static void Main(string[] args)
         {
 
+
+            var campaignPrice = new Campaigns();
+            var newCostumer = new NewCostumer();
+            var AdminMenuOption = new AdminMenuOption();
+
             var productEdit = new ProductEditor("../../../Products/ProductList.txt");
             var products = new Products("../../../Products/ProductList.txt");
             var productList = products.GetProductsFromFile(); // Initierar listan med produkter ifrån GetProducts metoden som är i ProductSearch klassen.
-            var campaignPrice = new Campaigns();
             campaignPrice.GetCampaignFromFile();
             campaignPrice.RemoveExpiredCampaign();
 
@@ -29,166 +33,12 @@ namespace _01_ChamCash
                 switch (menuChoice)
                 {
                     case "1":
-                        bool newCostumer = true; // Talar om för while-loopen att loopen är igång (true = 1 = på)
-                        while (newCostumer)
-                        {
-                            float totalSum = 0.0f;
-                            DateTime dateTime = System.DateTime.Now; // initierar dagens datum och tid ifrån datorsystemet till programmet
-
-
-
-
-                            Menus.NewCostumerDisplay();
-
-
-                            //Plussar på löpnummer efter varje kvitto
-                            int serialNumber = 0;
-                            string serialNumberFilePath = "../../../SerialNumber/serialNumber.txt";
-                            if (File.Exists(serialNumberFilePath))
-                            {
-                                string serialNumberContent = File.ReadAllText(serialNumberFilePath);
-                                if (int.TryParse(serialNumberContent, out serialNumber))
-                                {
-                                    serialNumber++;
-                                }
-                            }
-
-                            string filePath = $"../../../Receipts/RECIEPT_{dateTime.ToString("yyyy-MM-dd")}.txt"; // filePath skapar en .txt fil. filePath är sökvägen där kvittot ska sparas. 
-                            string receiptText = $"\n\n\tKVITTO\n ";
-                            receiptText += $"{dateTime}\n" +
-                     $"Kvitto:{serialNumber}\n" +
-                     $"---------------------------\n";
-
-
-
-                            List<string[]> receipt = new List<string[]>();
-
-
-                            float totalPriceOfProduct = 0.0f;
-                            bool productExist = true;
-                            while (productExist)
-                            {
-                                int searchResult = -1;
-                                int inputAmount = 0;
-
-                                Console.Write("\n\tAnge Produkt-ID och antal med mellanslag: ");
-                                string inputIdAndAmountString = Console.ReadLine();
-
-                                
-                                string[] inputIdAndAmount = inputIdAndAmountString.Split(' ');
-                                
-                                if (inputIdAndAmount.Length == 2)
-                                {
-                                    string inputId = inputIdAndAmount[0];
-                                    int.TryParse(inputIdAndAmount[1], out inputAmount);
-
-
-                                    searchResult = Products.LinearSearch(productList, inputId);
-
-                                    if (searchResult == -1)
-                                    {
-                                        Console.WriteLine("\n\tArtikeln finns ej med, tryck på enter för att fortsätta.");
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        receipt.Add(new string[] { inputId,  inputAmount.ToString(), productList[searchResult][0], productList[searchResult][3], productList[searchResult][2] });
-                                        receiptText += $"Produkt-ID: {inputId}, Antal: {inputAmount}\n";
-
-                                        Console.WriteLine($"\t{productList[searchResult][0]} {productList[searchResult][3]}kr * {inputAmount}  ");
-                                    }
-
-
-                                }
-                                else if (inputIdAndAmountString.ToUpper() == "PAY")
-                                {
-                                    receiptText += "---------------------------\n";
-                                    foreach (var items in receipt)
-                                    {
-                                        if (float.TryParse(items[1], NumberStyles.Float, CultureInfo.InvariantCulture, out float inputAmountFloat) &&
-                                            float.TryParse(items[3], NumberStyles.Float, CultureInfo.InvariantCulture, out float pricePerUnitFloat))
-                                        {
-                                            totalPriceOfProduct = inputAmountFloat * pricePerUnitFloat;
-                                            receiptText += $"{items[2]}\t{items[1]}st\t{items[3]}kr /{items[4]} = {totalPriceOfProduct}kr\n";
-                                            totalSum += totalPriceOfProduct;
-                                        }
-
-                                        else
-                                        {
-                                            Console.WriteLine("\tOgiltigt kvitto!!");
-                                        }
-
-                                        campaignPrice.GetCampaignFromFile();
-                                        var validCampaign = campaignPrice._campaignPrices.Find(campaign => campaign._productId == items[0] &&
-                                        DateOnly.FromDateTime(DateTime.Now) >= campaign._startDate && DateOnly.FromDateTime(DateTime.Now) <= campaign._endDate);
-                                        
-                                        if (validCampaign != null)
-                                        {
-                                            float validCampaignPrice = validCampaign._price;
-
-                                            if (validCampaignPrice == 0.0f)
-                                            {
-                                                float discount = (float)totalPriceOfProduct * 0.5f;
-
-                                                float totalDiscount = discount * (inputAmountFloat / 2.0f);
-                                                float discountSum = totalSum - totalDiscount; 
-                                                receiptText += $"Kampanjpris för {items[2]}: 2 för 1 = {discountSum}\n\n";
-                                                totalSum -= discountSum;
-                                            }
-                                            else
-                                            {
-                                            float discount = (float)totalPriceOfProduct - ((float)totalPriceOfProduct * Convert.ToSingle(validCampaignPrice / 100));
-                                            float discountSum = totalPriceOfProduct -= discount;
-                                            receiptText += $"Kampanjpris för {items[2]}: {validCampaignPrice}% rabatt = {discount}\n\n";
-                                            totalSum -= discountSum;
-                                            }
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("Inga kampanjer existerar!");
-                                        }
-
-                                    }
-
-                                    receiptText += $"\n\tTotalt: {totalSum:0.00}kr\n-------------------------- ";
-                                    if (inputIdAndAmountString.ToUpper() == "PAY")
-                                    {
-
-                                        File.AppendAllText(filePath, receiptText);
-                                        Console.WriteLine(receiptText);
-                                        Console.WriteLine("Kvittot har sparats, tryck på enter för att komma vidare.");
-
-                                        receipt.Clear();
-                                    }
-                                    File.WriteAllText(serialNumberFilePath, serialNumber.ToString());
-
-                                    Console.ReadKey();
-                                    Console.Clear();
-                                    productExist = false;
-                                    newCostumer = false;
-                                }
-                                else if (inputIdAndAmountString == "0")
-                                {
-                                    Console.Clear();
-                                    productExist = false;
-                                    newCostumer = false;
-                                }
-                                else
-                                {
-                                    Console.WriteLine("\tFel format. Var god ange både Produkt-ID och Antal med ett mellanslag innan antalet!");
-
-                                    if (inputIdAndAmountString.ToLower() == "bajskorv" || inputIdAndAmountString.ToLower() == "bajs")
-                                        Console.WriteLine("\tBajs/Bajskorv funkar inte heller");
-                                }
-
-
-                            }
-
-                        }
+                        newCostumer.NewCostumerChoice();
                         break;
-
-
                     case "2":
+
+                        AdminMenuOption.AdminMenuChoice();
+
                         bool adminRunning = true;
 
                         while (adminRunning)
@@ -225,14 +75,10 @@ namespace _01_ChamCash
 
                             }
                         }
+
                         break;
-
-
-
                     case "0":
-                        Console.WriteLine("\t---------");
-                        Console.WriteLine("\t||Hejdå||");
-                        Console.WriteLine("\t---------");
+                        Menus.GoodByeMessage();
                         menuIsRunning = false;
                         Thread.Sleep(2000);
                         break;
@@ -264,11 +110,19 @@ namespace _01_ChamCash
 
 
 
+
+
+//--Efter man lagt till en ny produkt i listan så hittar den inte produkten när man vill köpa.[V]
+//--lägg all logik som finns i switchcases i metoder.[V]
+//--Fråga om många olika kampanjer eller många av samma kampanj. (spelar ingen roll det kan vara många av samma kampanj)[V]
+//debugga varför den dubblerar kampanjlistan när man lägger till ny procent kampanj
+//--Fixa så att man inte kan skriva 0% i procentkampanj [V]
 //--Fixa så man kan gå tillbaka i ta bort kampanjer menyval.[V]
 //--Fixa ta bort kampanjer metod så att den tar bort utgången kampanj automatiskt[V]
 //--fixa så att kampanjpriset sätts i _price property i Campaigns.[V]
 //--lägg till felhantering för att skapa ny produkt.[V]
 //--fixa så att _price får ett värde av kampanjpriset.[V]
+//--kalla på GetCampaignFromFile() i main för att lägga till kampanj i kvitto[V]
 //--kalla på GetCampaignFromFile() i main för att lägga till kampanj i kvitto
 //--krashar när man skriver ett produkt id i linearSearch[V]
 //Lägg till olika kampanjer

@@ -47,7 +47,7 @@ namespace _01_ChamCash
                                 _productList[index][3] = editedProduct[3];
                                 _productList[index][2] = editedProduct[2];
 
-                                string updatedLine = string.Join(", ", _productList[index]);
+                                string updatedLine = string.Join(",", _productList[index]);
 
                                 List<string> lines = File.ReadAllLines(_productFilePath).ToList();
 

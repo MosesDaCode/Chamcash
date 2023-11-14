@@ -10,15 +10,15 @@ namespace _01_ChamCash
     {
         public static string FirstMenu()
         {
-                Console.WriteLine("\t-----------------");
-                Console.WriteLine("\t||KASSA        ||");
-                Console.WriteLine("\t-----------------");
-                Console.WriteLine("\t||1. Ny kund   ||");
-                Console.WriteLine("\t||2. Admin     ||");
-                Console.WriteLine("\t||0. Avsluta   ||");
-                Console.WriteLine("\t-----------------");
-                Console.Write("\tAnge menyval: ");
-                string menuChoice = Console.ReadLine();
+            Console.WriteLine("\t-----------------");
+            Console.WriteLine("\t||KASSA        ||");
+            Console.WriteLine("\t-----------------");
+            Console.WriteLine("\t||1. Ny kund   ||");
+            Console.WriteLine("\t||2. Admin     ||");
+            Console.WriteLine("\t||0. Avsluta   ||");
+            Console.WriteLine("\t-----------------");
+            Console.Write("\tAnge menyval: ");
+            string menuChoice = Console.ReadLine();
             return menuChoice;
 
         }
@@ -70,6 +70,12 @@ namespace _01_ChamCash
             Console.Write("Ange menyval: ");
             string addCampaignChoice = Console.ReadLine();
             return addCampaignChoice;
+        }
+        public static void GoodByeMessage()
+        {
+            Console.WriteLine("\t---------");
+            Console.WriteLine("\t||Hejdå||");
+            Console.WriteLine("\t---------");
         }
 
     }

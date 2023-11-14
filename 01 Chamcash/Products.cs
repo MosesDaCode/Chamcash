@@ -24,7 +24,7 @@ namespace _01_ChamCash
             List<string[]> products = new List<string[]>();
             foreach (string line in productlines)
             {
-                string[] productInfo = line.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] productInfo = line.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 products.Add(productInfo);
             }
             return products;
@@ -45,7 +45,7 @@ namespace _01_ChamCash
 
         public void SaveProductsToFile(string[] newproduct)
         {
-            string line = String.Join(", ", newproduct);
+            string line = String.Join(",", newproduct);
 
             File.AppendAllText(_productFilePath, line + Environment.NewLine);
         }
