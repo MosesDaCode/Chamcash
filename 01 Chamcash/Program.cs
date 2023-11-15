@@ -10,7 +10,7 @@ namespace _01_ChamCash
         static void Main(string[] args)
         {
 
-
+            DefaultProducts.CheckForDefaultProducts();
             var campaignPrice = new Campaigns();
             var newCostumer = new NewCostumer();
             var AdminMenuOption = new AdminMenuOption();
