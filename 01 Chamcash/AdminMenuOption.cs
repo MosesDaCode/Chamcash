@@ -13,7 +13,7 @@ namespace _01_Chamcash
         {
             var products = new Products("../../../Products/ProductList.txt");
             var productEdit = new ProductEditor("../../../Products/ProductList.txt");
-            var productList = products.GetProductsFromFile(); // Initierar listan med produkter ifrån GetProducts metoden som är i ProductSearch klassen.
+            var productList = products.GetProductsFromFile();
             var campaignPrice = new Campaigns();
 
             bool adminRunning = true;

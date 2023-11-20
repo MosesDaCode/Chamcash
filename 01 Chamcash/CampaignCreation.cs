@@ -37,47 +37,53 @@ namespace _01_Chamcash
                                 Console.Write("Ange slut datum för kampanjen (åååå-MM-dd): ");
                                 if (DateOnly.TryParse(Console.ReadLine(), out DateOnly endDate))
                                 {
-                                    Console.Write("Lägg till en rabatt i procent (%): ");
-                                    if (float.TryParse(Console.ReadLine(), out float campaignPrice))
+                                    if (startDate < endDate)
                                     {
-                                        if (campaignPrice != 0)
+                                        Console.Write("Lägg till en rabatt i procent (%): ");
+                                        if (float.TryParse(Console.ReadLine(), out float campaignPrice))
                                         {
-                                            Campaigns newCampaignPrice = new Campaigns(productToAddCampaign, startDate, endDate, campaignPrice, "../../../Products/ProductList.txt");
-                                            if (newCampaignPrice._endDate >= DateOnly.FromDateTime(DateTime.Now))
+                                            if (campaignPrice != 0)
                                             {
-                                                AddActiveCampaign(newCampaignPrice);
-                                                
+                                                Campaigns newCampaignPrice = new Campaigns(productToAddCampaign, startDate, endDate, campaignPrice, "../../../Products/ProductList.txt");
+                                                if (newCampaignPrice._endDate >= DateOnly.FromDateTime(DateTime.Now) && newCampaignPrice._startDate < newCampaignPrice._endDate)
+                                                {
+                                                    AddActiveCampaign(newCampaignPrice);
+
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine("kampanjen kan inte läggas till! Slutdatum har redan gått ut. Tryck på enter och försök igen!");
+                                                }
                                             }
+
                                             else
                                             {
-                                                Console.WriteLine("kampanjen kan inte läggas till! Slutdatum har redan gått ut. Tryck på enter och försök igen!");
+                                                Console.WriteLine("Du kan inte ha en rabatt på 0%, tryck på enter och försök igen!");
                                             }
-                                        }
 
+                                            Console.WriteLine("Wohoo kampanjpriser har skapats!! tryck på enter för att fortsätta...");
+
+                                            createCampaign = false;
+                                            Console.ReadKey();
+                                            Console.Clear();
+                                        }
                                         else
                                         {
-                                            Console.WriteLine("Du kan inte ha en rabatt på 0%, tryck på enter och försök igen!");
+                                            Console.WriteLine("Du har anget ett ogiltigt kampanjpris!, Tryck på enter och försök igen");
+                                            Console.ReadKey();
                                         }
-
-                                        Console.WriteLine("Wohoo kampanjpriser har skapats!! tryck på enter för att fortsätta...");
-
-                                        createCampaign = false;
-                                        Console.ReadKey();
-                                        Console.Clear();
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Du har anget ett ogiltigt kampanjpris!");
+                                        Console.WriteLine("Du har anget ett ogiltigt slut datum!, Tryck på enter och försök igen");
+                                        Console.ReadKey();
                                     }
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Du har anget ett ogiltigt slut datum!");
                                 }
                             }
                             else
                             {
-                                Console.WriteLine("Du har anget ett ogiltigt start datum!");
+                                Console.WriteLine("Du har anget ett ogiltigt start datum!, Tryck på enter och försök igen");
+                                Console.ReadKey();
                             }
                         }
                         else if (productToAddCampaign == "0")
@@ -90,63 +96,6 @@ namespace _01_Chamcash
                         {
                             Console.WriteLine("Producten finns inte, försök igen!");
                         }
-                        break;
-                    case "2":
-                        Console.Clear();
-                        Console.WriteLine("\t-------------------");
-                        Console.WriteLine("\t||2 för 1 kampanj||");
-                        Console.WriteLine("\t-------------------\n");
-                        Console.Write("Skriv Produkt-ID för produkten: ");
-                        string twoForOneCampaign = Console.ReadLine();
-                        searchResult = Products.LinearSearch(products.GetProductsFromFile(), twoForOneCampaign);
-
-                        if (searchResult != -1)
-                        {
-                            Console.Write("Ange ett start datum för kampanjen (åååå-MM-dd): ");
-                            if (DateOnly.TryParse(Console.ReadLine(), out DateOnly startDate))
-                            {
-                                Console.Write("Ange slut datum för kampanjen (åååå-MM-dd): ");
-                                if (DateOnly.TryParse(Console.ReadLine(), out DateOnly endDate))
-                                {
-                                    float campaignPrice = 0.0f;
-
-                                    Campaigns newCampaignPrice = new Campaigns(twoForOneCampaign, startDate, endDate, campaignPrice, "../../../Products/ProductList.txt");
-                                    if (newCampaignPrice._endDate >= DateOnly.FromDateTime(DateTime.Now))
-                                    {
-                                        AddActiveCampaign(newCampaignPrice);
-                                    }
-                                    Console.WriteLine("wohoo din 2 för 1 kampanj har skapats!! Tryck på enter för att fortsätta");
-                                    createCampaign = false;
-                                    Console.ReadKey();
-                                    Console.Clear();
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Du har anget ett ogiltigt slut datum!");
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("Du har anget ett ogiltigt start datum!");
-                            }
-                        }
-                        else if (twoForOneCampaign == "0")
-                        {
-                            Console.Clear();
-                            AddCampaignChoice = Menus.AddCampaignChoice();
-
-                        }
-                        else
-                        {
-                            Console.WriteLine("Producten finns inte, försök igen!");
-                        }
-
-                        break;
-                    case "3":
-                        Console.Clear();
-                        Console.WriteLine("\t----------------------");
-                        Console.WriteLine("\t||Sänkt pris kampanj||");
-                        Console.WriteLine("\t----------------------\n");
                         break;
                     case "0":
                         Console.Clear();

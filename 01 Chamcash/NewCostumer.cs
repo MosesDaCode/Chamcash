@@ -15,11 +15,11 @@ namespace _01_Chamcash
             var products = new Products("../../../Products/ProductList.txt");
             var productList = products.GetProductsFromFile();
             var campaignPrice = new Campaigns();
-            bool newCostumer = true; // Talar om för while-loopen att loopen är igång (true = 1 = på)
+            bool newCostumer = true;
             while (newCostumer)
             {
-                float totalSum = 0.0f;
-                DateTime dateTime = System.DateTime.Now; // initierar dagens datum och tid ifrån datorsystemet till programmet
+                double totalSum = 0;
+                DateTime dateTime = System.DateTime.Now;
 
 
 
@@ -27,7 +27,7 @@ namespace _01_Chamcash
                 Menus.NewCostumerDisplay();
 
 
-                //Plussar på löpnummer efter varje kvitto
+
                 int serialNumber = 0;
                 string serialNumberFilePath = "../../../SerialNumber/serialNumber.txt";
                 if (File.Exists(serialNumberFilePath))
@@ -39,7 +39,7 @@ namespace _01_Chamcash
                     }
                 }
 
-                string filePath = $"../../../Receipts/RECIEPT_{dateTime.ToString("yyyy-MM-dd")}.txt"; // filePath skapar en .txt fil. filePath är sökvägen där kvittot ska sparas. 
+                string filePath = $"../../../Receipts/RECIEPT_{dateTime.ToString("yyyy-MM-dd")}.txt";
                 string receiptText = $"\n\n\tKVITTO\n ";
                 receiptText += $"{dateTime}\n" +
          $"Kvitto:{serialNumber}\n" +
@@ -52,7 +52,7 @@ namespace _01_Chamcash
 
                 float totalPriceOfProduct = 0.0f;
                 bool productExist = true;
-                
+
                 while (productExist)
                 {
                     int searchResult = -1;
@@ -67,22 +67,27 @@ namespace _01_Chamcash
                     if (inputIdAndAmount.Length == 2)
                     {
                         string inputId = inputIdAndAmount[0];
-                        int.TryParse(inputIdAndAmount[1], out inputAmount);
 
-
-                        searchResult = Products.LinearSearch(productList, inputId);
-
-                        if (searchResult == -1)
+                        if (int.TryParse(inputIdAndAmount[1], out inputAmount))
                         {
-                            Console.WriteLine("\n\tArtikeln finns ej med, tryck på enter för att fortsätta.");
-                            Console.ReadKey();
+                            searchResult = Products.LinearSearch(productList, inputId);
+
+                            if (searchResult == -1)
+                            {
+                                Console.WriteLine("\n\tArtikeln finns ej med, tryck på enter för att fortsätta.");
+                                Console.ReadKey();
+                            }
+                            else
+                            {
+                                receipt.Add(new string[] { inputId, inputAmount.ToString(), productList[searchResult][0], productList[searchResult][3], productList[searchResult][2] });
+                                receiptText += $"Produkt-ID: {inputId}, Antal: {inputAmount}\n";
+
+                                Console.WriteLine($"\t{productList[searchResult][0]} {productList[searchResult][3]}kr * {inputAmount} {productList[searchResult][2]}  ");
+                            }
                         }
                         else
                         {
-                            receipt.Add(new string[] { inputId, inputAmount.ToString(), productList[searchResult][0], productList[searchResult][3], productList[searchResult][2] });
-                            receiptText += $"Produkt-ID: {inputId}, Antal: {inputAmount}\n";
-
-                            Console.WriteLine($"\t{productList[searchResult][0]} {productList[searchResult][3]}kr * {inputAmount}  ");
+                            Console.WriteLine("\n\tOgiltig inmatning av antal, försök igen.");
                         }
 
 
@@ -96,7 +101,7 @@ namespace _01_Chamcash
                                 float.TryParse(items[3], NumberStyles.Float, CultureInfo.InvariantCulture, out float pricePerUnitFloat))
                             {
                                 totalPriceOfProduct = inputAmountFloat * pricePerUnitFloat;
-                                receiptText += $"{items[2]}\t{items[1]}st\t{items[3]}kr /{items[4]} = {totalPriceOfProduct}kr\n";
+                                receiptText += $"{items[2]}\t{items[1]}{items[4]}\t{items[3]}kr /{items[4]} = {totalPriceOfProduct}kr\n";
                                 totalSum += totalPriceOfProduct;
                             }
 
@@ -113,26 +118,10 @@ namespace _01_Chamcash
                             {
                                 float validCampaignPrice = validCampaign._price;
 
-                                if (validCampaignPrice == 0.0f)
-                                {
-                                    float discount = (float)totalPriceOfProduct * 0.5f;
-
-                                    float totalDiscount = discount * (inputAmountFloat / 2.0f);
-                                    float discountSum = totalSum - totalDiscount;
-                                    receiptText += $"Kampanjpris för {items[2]}: 2 för 1 = {discountSum}\n\n";
-                                    totalSum -= discountSum;
-                                }
-                                else
-                                {
-                                    float discount = (float)totalPriceOfProduct - ((float)totalPriceOfProduct * Convert.ToSingle(validCampaignPrice / 100));
-                                    float discountSum = totalPriceOfProduct -= discount;
-                                    receiptText += $"Kampanjpris för {items[2]}: {validCampaignPrice}% rabatt = {discount}\n\n";
-                                    totalSum -= discountSum;
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("Inga kampanjer existerar!");
+                                float discount = (float)totalPriceOfProduct - ((float)totalPriceOfProduct * Convert.ToSingle(validCampaignPrice / 100));
+                                float discountSum = totalPriceOfProduct -= discount;
+                                receiptText += $"Kampanjpris för {items[2]}: {validCampaignPrice}% rabatt = {discount}\n\n";
+                                totalSum -= discountSum;
                             }
 
                         }

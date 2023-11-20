@@ -52,7 +52,6 @@ namespace _01_Chamcash
                         (float.TryParse(campaignInfo[3].Trim(), out float price))))
                     {
                         Campaigns campaign = new Campaigns(productId, startDate, endDate, price, _productFilePath);
-                        //Fixa Bo ent gånt
 
                         _price = price;
 
@@ -75,7 +74,6 @@ namespace _01_Chamcash
 
 
             string[] line = newCampaign.Select(campaign => $"{campaign._productId}, {campaign._startDate}, {campaign._endDate}, {campaign._price}").ToArray();
-            //string line = String.Join(", ", newCampaign);
 
             File.AppendAllLines(_campaignFilePath, line);
 
@@ -90,9 +88,7 @@ namespace _01_Chamcash
         public void RemoveExpiredCampaign()
         {
             DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
-            //string[] lines = File.ReadAllLines(_campaignFilePath);
-
-            //var remainingLines = lines.Where(lines => lines.)
+           
             _campaignPrices.RemoveAll(campaign => campaign._endDate < currentDate);
             UpdateCampaignFile();
         }
@@ -108,6 +104,7 @@ namespace _01_Chamcash
         }
         public void RemoveCampaign(string removeCampaignstring)
         {
+            GetCampaignFromFile();
             Campaigns campaignToRemove = _campaignPrices.Find(campaign => campaign._productId == removeCampaignstring);
             if (campaignToRemove != null)
             {
@@ -134,7 +131,7 @@ namespace _01_Chamcash
             bool campaignManagmentRunning = true;
             while (campaignManagmentRunning)
             {
-                var campaignChoice = Menus.CampaignMenu();
+                string campaignChoice = Menus.CampaignMenu();
                 switch (campaignChoice)
                 {
                     case "1":
@@ -154,8 +151,6 @@ namespace _01_Chamcash
                         Console.WriteLine("Du har angett fel meny val, tryck på enter för att fortsätta!");
                         Console.ReadKey();
                         Console.Clear();
-                        campaignChoice = Menus.CampaignMenu();
-
                         break;
                 }
             }

@@ -9,7 +9,6 @@ namespace _01_ChamCash
 
         static void Main(string[] args)
         {
-
             DefaultProducts.CheckForDefaultProducts();
             var campaignPrice = new Campaigns();
             var newCostumer = new NewCostumer();
@@ -36,46 +35,7 @@ namespace _01_ChamCash
                         newCostumer.NewCostumerChoice();
                         break;
                     case "2":
-
                         AdminMenuOption.AdminMenuChoice();
-
-                        bool adminRunning = true;
-
-                        while (adminRunning)
-                        {
-                            string adminChoice = Menus.AdminMenu();
-                            Console.Clear();
-
-                            switch (adminChoice)
-                            {
-                                case "1":
-                                    productEdit.CreateNewProduct(productList);
-                                    Console.Clear();
-                                    break;
-                                case "2":
-                                    productEdit.EditProduct(productList);
-                                    Console.Clear();
-                                    break;
-                                case "3":
-                                    campaignPrice.CampaignManagment();
-                                    break;
-                                case "0":
-                                    Console.Clear();
-                                    adminRunning = false;
-                                    break;
-                                default:
-                                    Console.WriteLine("Du har angett fel meny val, tryck på enter för att fortsätta!");
-
-                                    if (adminChoice == "bajskorv" || adminChoice == "bajs")
-                                        Console.WriteLine("Bajs/Bajskorv funkar inte!");
-
-                                    Console.ReadKey();
-                                    Console.Clear();
-                                    break;
-
-                            }
-                        }
-
                         break;
                     case "0":
                         Menus.GoodByeMessage();
@@ -108,14 +68,16 @@ namespace _01_ChamCash
 
 
 
-
-
-
-
+//--Funktion: När man kägger till en ny kampanj; Lägg till felhanteringskontroll att slutdatum ska vara efter startdatum eller tvärtom. -3[V]
+//--Lägga till kampanj 2 för 1 funkar med start och slutdatum tidigare än idag. -2 el 3. Görs samma sak med procentkampanjen[V]
+//--Systemet kraschar när du köper en produkt som du redigerat tidigare med tomma värden. Tex du anger produktid men inte anger värdet för resten (trycker enter bara) - 1 [V]
+//--Ändra till rätt enhet tex klicha 1 st till rätta enheten som är kg så det blir 1 kg  - 3[V]
+//--ta bort texten "kampanj existerar inte" för varje produkt som inte har kampanj efter pay - 4 [V]
+//--kontrollera att antalet är integer. tex om du anger "300 e" så blir utfallet 300 0 -4 [V]
 //--Efter man lagt till en ny produkt i listan så hittar den inte produkten när man vill köpa.[V]
 //--lägg all logik som finns i switchcases i metoder.[V]
 //--Fråga om många olika kampanjer eller många av samma kampanj. (spelar ingen roll det kan vara många av samma kampanj)[V]
-//debugga varför den dubblerar kampanjlistan när man lägger till ny procent kampanj
+//--debugga varför den dubblerar kampanjlistan när man lägger till ny procent kampanj [V] Svar: man ska inte röra listan i .txt filen då spökar den.
 //--Fixa så att man inte kan skriva 0% i procentkampanj [V]
 //--Fixa så man kan gå tillbaka i ta bort kampanjer menyval.[V]
 //--Fixa ta bort kampanjer metod så att den tar bort utgången kampanj automatiskt[V]
@@ -125,7 +87,7 @@ namespace _01_ChamCash
 //--kalla på GetCampaignFromFile() i main för att lägga till kampanj i kvitto[V]
 //--kalla på GetCampaignFromFile() i main för att lägga till kampanj i kvitto
 //--krashar när man skriver ett produkt id i linearSearch[V]
-//Lägg till olika kampanjer
+//--Man ska kunna lägga till flera kampanjer för olika datum[V]
 //--fixa input för kampanj filen[V]
 //--produkter i kassasystemet ska lagras i fil [V]
 //--hamnar i en loop när jag lägger till kampanjer. kan inte gå tillbaka från menyn.[V]

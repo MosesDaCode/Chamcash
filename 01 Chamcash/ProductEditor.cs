@@ -27,15 +27,15 @@ namespace _01_ChamCash
             {
                 Console.Write("\tAnge ett nytt namn: ");
                 string newName = Console.ReadLine();
-                if (newName != "0")
+                if (newName != "0" && newName != "")
                 {
                     Console.Write("\tAnge ett nytt pris: ");
                     string newPrice = Console.ReadLine();
-                    if (newPrice != "0")
+                    if (newPrice != "0" && newPrice != "")
                     {
                         Console.Write("\tAnge antingen st eller kg: ");
                         string newUnit = Console.ReadLine();
-                        if (newUnit != "0")
+                        if (newUnit != "0" && newUnit != "")
                         {
                             string[] editedProduct = { newName, oldProductId, newUnit, newPrice };
 
@@ -63,7 +63,7 @@ namespace _01_ChamCash
                         }
                         else
                         {
-                            Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                            Console.WriteLine("Redigering avbruten, Tryck på enter för att fortsätta.");
                             Console.ReadKey();
                             Console.Clear();
                         }
@@ -71,7 +71,7 @@ namespace _01_ChamCash
                     }
                     else
                     {
-                        Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                        Console.WriteLine("Redigering avbruten, Tryck på enter för att fortsätta.");
                         Console.ReadKey();
                         Console.Clear();
                     }
@@ -79,7 +79,7 @@ namespace _01_ChamCash
                 }
                 else
                 {
-                    Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                    Console.WriteLine("Redigering avbruten, Tryck på enter för att fortsätta.");
                     Console.ReadKey();
                     Console.Clear();
                 }
@@ -88,6 +88,7 @@ namespace _01_ChamCash
             }
             else if (oldProductId == "0")
             {
+                Console.WriteLine("Redigering avbruten, Tryck på enter för att fortsätta.");
                 Console.Clear();
             }
             else
@@ -106,7 +107,7 @@ namespace _01_ChamCash
             Console.WriteLine("\t||Lägg till en produkt       ||");
             Console.WriteLine("\t||Ange 0 för att gå tillbaka ||");
             Console.WriteLine("\t-------------------------------\n");
-            Console.Write("\n\n\tAnge produkt-ID: ");
+            Console.Write("\n\n\tAnge produkt-ID för produkten som ska redigeras: ");
             string productId = Console.ReadLine();
             string productName = null;
             string productPrice = null;
@@ -117,15 +118,15 @@ namespace _01_ChamCash
                 Console.Write("\tAnge produktens namn: ");
                 productName = Console.ReadLine();
 
-                if (productName != "0")
+                if (productName != "0" && productName != "")
                 {
                     Console.Write("\tAnge ett pris: ");
                     productPrice = Console.ReadLine();
-                    if (productPrice != "0")
+                    if (productPrice != "0" && productPrice != "")
                     {
                         Console.Write("\tAnge antingen st eller kg: ");
                         productUnit = Console.ReadLine();
-                        if (productUnit != "0")
+                        if (productUnit != "0" && productUnit != "" && productUnit == "kg" || productUnit == "st")
                         {
                             string[] newProduct = { productName, productId, productUnit, productPrice };
                             SaveProductsToFile(newProduct);
@@ -135,7 +136,7 @@ namespace _01_ChamCash
                         }
                         else
                         {
-                            Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                            Console.WriteLine("Åtgärd avbruten, Tryck på enter för att fortsätta.");
                             Console.ReadKey();
                             Console.Clear();
                         }
@@ -143,7 +144,7 @@ namespace _01_ChamCash
                     }
                     else
                     {
-                        Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                        Console.WriteLine("Åtgärd avbruten, Tryck på enter för att fortsätta.");
                         Console.ReadKey();
                         Console.Clear();
                     }
@@ -151,7 +152,7 @@ namespace _01_ChamCash
                 }
                 else
                 {
-                    Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                    Console.WriteLine("Åtgärd avbruten, Tryck på enter för att fortsätta.");
                     Console.ReadKey();
                     Console.Clear();
                 }
@@ -160,13 +161,13 @@ namespace _01_ChamCash
             }
             else if (productId == "0")
             {
-                Console.WriteLine("Du går nu tillbaka, Tryck på enter för att fortsätta.");
+                Console.WriteLine("Åtgärd avbruten, Tryck på enter för att fortsätta.");
                 Console.ReadKey();
                 Console.Clear();
             }
             else
             {
-                Console.WriteLine("\tProdukt-ID existerar redan! tryck enter för att fortsätta");
+                Console.WriteLine("\tProdukt-ID existerar redan! Tryck enter för att fortsätta");
                 Console.ReadKey();
                 Console.Clear();
             }

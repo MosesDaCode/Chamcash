@@ -25,14 +25,10 @@ namespace _01_Chamcash
                 RemoveCampaign(productToRemove);
                 Console.ReadKey();
                 Console.Clear();
-                Menus.CampaignMenu();
-
-
             }
             else if (productToRemove == "0")
             {
                 Console.Clear();
-                //campaignChoice = Menus.CampaignMenu();
             }
         }
 

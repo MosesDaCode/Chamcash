@@ -1,0 +1,278 @@
+
+
+	KVITTO
+ 2023-11-20 14:31:25
+Kvitto:136
+---------------------------
+Produkt-ID: 312, Antal: 2
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 310, Antal: 2
+---------------------------
+Lampa	2st	23.90kr /st = 47,8kr
+Bananer	2st	12.50kr /kg = 25kr
+Dator	2st	3999kr /st = 7998kr
+
+	Totalt: 8070,80kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:03:36
+Kvitto:137
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 3
+Produkt-ID: 302, Antal: 1
+Produkt-ID: 303, Antal: 4
+Produkt-ID: 304, Antal: 5
+Produkt-ID: 305, Antal: 3
+Produkt-ID: 306, Antal: 3
+Produkt-ID: 307, Antal: 3
+---------------------------
+Bananer	2st	12.50kr /kg = 25kr
+Kaffe	3st	35.50kr /st = 106,5kr
+Smör	1st	26.50kr /st = 26,5kr
+Mjölk	4st	19.50kr /st = 78kr
+Snus	5st	49kr /st = 245kr
+Kex	3st	13.90kr /st = 41,699997kr
+Korv	3st	35kr /st = 105kr
+Kött	3st	89kr /kg = 267kr
+
+	Totalt: 894,70kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:05:43
+Kvitto:138
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 2
+Produkt-ID: 302, Antal: 1
+Produkt-ID: 303, Antal: 2
+Produkt-ID: 304, Antal: 2
+Produkt-ID: 305, Antal: 3
+Produkt-ID: 306, Antal: 2
+Produkt-ID: 307, Antal: 4
+---------------------------
+Bananer	2kg	12.50kr /kg = 25kr
+Kaffe	2st	35.50kr /st = 71kr
+Smör	1st	26.50kr /st = 26,5kr
+Mjölk	2st	19.50kr /st = 39kr
+Snus	2st	49kr /st = 98kr
+Kex	3st	13.90kr /st = 41,699997kr
+Korv	2st	35kr /st = 70kr
+Kött	4kg	89kr /kg = 356kr
+
+	Totalt: 727,20kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:18:39
+Kvitto:139
+---------------------------
+Produkt-ID: 302, Antal: 2
+---------------------------
+Smör	2st	26.50kr /st = 53kr
+Kampanjpris för Smör: 2 för 1 = 26,5
+
+
+	Totalt: 26,50kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:18:50
+Kvitto:140
+---------------------------
+Produkt-ID: 302, Antal: 3
+---------------------------
+Smör	3st	26.50kr /st = 79,5kr
+Kampanjpris för Smör: 2 för 1 = 59,625
+
+
+	Totalt: 19,88kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:20:36
+Kvitto:141
+---------------------------
+Produkt-ID: 302, Antal: 3
+---------------------------
+Smör	3st	26.50kr /st = 79,5kr
+Kampanjpris för Smör: 2 för 1 = 39,75
+
+
+	Totalt: 39,75kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:36:49
+Kvitto:142
+---------------------------
+Produkt-ID: 302, Antal: 3
+---------------------------
+Smör	3st	26.50kr /st = 79,5kr
+Kampanjpris för Smör: 2 för 1 = 53
+
+
+	Totalt: 26,50kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:38:27
+Kvitto:142
+---------------------------
+Produkt-ID: 302, Antal: 3
+---------------------------
+Smör	3st	26.50kr /st = 79,5kr
+Kampanjpris för Smör: 2 för 1 = 53
+
+
+	Totalt: 53,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:38:39
+Kvitto:143
+---------------------------
+Produkt-ID: 302, Antal: 4
+---------------------------
+Smör	4st	26.50kr /st = 106kr
+Kampanjpris för Smör: 2 för 1 = 70,66667
+
+
+	Totalt: 79,50kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:40:16
+Kvitto:144
+---------------------------
+Produkt-ID: 302, Antal: 2
+---------------------------
+Smör	2st	26.50kr /st = 53kr
+
+	Totalt: 53,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:40:38
+Kvitto:145
+---------------------------
+Produkt-ID: 302, Antal: 2
+---------------------------
+Smör	2st	26.50kr /st = 53kr
+Kampanjpris för Smör: 2 för 1 = 35,333336
+
+
+	Totalt: 26,50kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:54:03
+Kvitto:146
+---------------------------
+Produkt-ID: 302, Antal: 3
+---------------------------
+Smör	3st	26.50kr /st = 79,5kr
+Kampanjpris för Smör: 2 för 1 = ∞
+
+
+	Totalt: −∞kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 15:54:29
+Kvitto:147
+---------------------------
+Produkt-ID: 302, Antal: 2
+---------------------------
+Smör	2st	26.50kr /st = 53kr
+Kampanjpris för Smör: 2 för 1 = ∞
+
+
+	Totalt: −∞kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 16:09:24
+Kvitto:148
+---------------------------
+Produkt-ID: 302, Antal: 3
+---------------------------
+Smör	3st	26.50kr /st = 79,5kr
+Kampanjpris för Smör: 2 för 1 = ∞
+
+
+	Totalt: −∞kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 16:10:34
+Kvitto:149
+---------------------------
+Produkt-ID: 302, Antal: 2
+---------------------------
+Smör	2st	26.50kr /st = 53kr
+Kampanjpris för Smör: 2 för 1 = ∞
+
+
+	Totalt: −∞kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 16:10:58
+Kvitto:150
+---------------------------
+Produkt-ID: 302, Antal: 1
+---------------------------
+Smör	1st	26.50kr /st = 26,5kr
+Smör	1st	26.50kr /st = 26,5kr
+
+	Totalt: 53,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 16:18:36
+Kvitto:151
+---------------------------
+Produkt-ID: 302, Antal: 3
+---------------------------
+Smör	3st	26.50kr /st = 79,5kr
+Kampanjpris för Smör: 2 för 1 = ∞
+
+
+	Totalt: −∞kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 16:35:08
+Kvitto:152
+---------------------------
+Produkt-ID: 302, Antal: 3
+---------------------------
+Smör	3st	26.50kr /st = 79,5kr
+
+	Totalt: 79,50kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 16:55:38
+Kvitto:153
+---------------------------
+---------------------------
+
+	Totalt: 0,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 16:57:25
+Kvitto:154
+---------------------------
+Produkt-ID: 300, Antal: 4
+---------------------------
+Bananer	4kg	12.50kr /kg = 50kr
+Kampanjpris för Bananer: 30% rabatt = 35
+
+
+	Totalt: 35,00kr
+-------------------------- 
