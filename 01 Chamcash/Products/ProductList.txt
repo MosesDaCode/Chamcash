@@ -16,3 +16,4 @@ Mobil,314,st,5999
 Stol,315,st,79.90
 KLICHA,100,kg,9
 Knafe,1,st,79
+Lunch,316,st,59.90

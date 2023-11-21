@@ -12,7 +12,6 @@ namespace _01_Chamcash
     public class Campaigns : Products
     {
         public List<Campaigns> _campaignPrices { get; set; } = new List<Campaigns>();
-        private List<string[]> _products;
         public static string _campaignFilePath = "../../../Campaigns/CampaignList.txt";
 
 
@@ -125,8 +124,6 @@ namespace _01_Chamcash
         {
             CampaignCreation campaignCreation = new CampaignCreation();
             CampaignRemoval removeCampaign = new CampaignRemoval();
-            var products = new Products("../../../Products/ProductList.txt");
-
 
             bool campaignManagmentRunning = true;
             while (campaignManagmentRunning)

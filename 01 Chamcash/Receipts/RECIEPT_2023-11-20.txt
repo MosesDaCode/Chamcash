@@ -276,3 +276,35 @@ Kampanjpris för Bananer: 30% rabatt = 35
 
 	Totalt: 35,00kr
 -------------------------- 
+
+	KVITTO
+ 2023-11-20 19:47:30
+Kvitto:155
+---------------------------
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 3
+Produkt-ID: 302, Antal: 3
+Produkt-ID: 312, Antal: 3
+Produkt-ID: 314, Antal: 23
+---------------------------
+Bananer	2kg	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 30% rabatt = 17,5
+
+Kaffe	3st	35.50kr /st = 106,5kr
+Smör	3st	26.50kr /st = 79,5kr
+Lampa	3st	23.90kr /st = 71,7kr
+Mobil	23st	5999kr /st = 137977kr
+
+	Totalt: 138252,20kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-20 19:50:14
+Kvitto:156
+---------------------------
+Produkt-ID: 316, Antal: 2
+---------------------------
+Johanna	2kg	9999999999999999999999kr /kg = 2E+22kr
+
+	Totalt: 19999999556392600000000,00kr
+-------------------------- 

@@ -12,7 +12,6 @@ namespace _01_Chamcash
        
         public void RemoveCampaign()
         {
-            var menu = new Menus();   
             Console.Clear();
             Console.WriteLine("\t---------------------------");
             Console.WriteLine("\t||Ta bort kampanj        ||");

@@ -13,17 +13,11 @@ namespace _01_ChamCash
             var campaignPrice = new Campaigns();
             var newCostumer = new NewCostumer();
             var AdminMenuOption = new AdminMenuOption();
-
-            var productEdit = new ProductEditor("../../../Products/ProductList.txt");
-            var products = new Products("../../../Products/ProductList.txt");
-            var productList = products.GetProductsFromFile(); // Initierar listan med produkter ifrån GetProducts metoden som är i ProductSearch klassen.
             campaignPrice.GetCampaignFromFile();
             campaignPrice.RemoveExpiredCampaign();
 
-            string removeCampaignString = null;
-            string pay = null;
-
-            bool menuIsRunning = true; // Håller menyn aktiv
+            
+            bool menuIsRunning = true;
             while (menuIsRunning)
             {
                 string menuChoice = Menus.FirstMenu();
