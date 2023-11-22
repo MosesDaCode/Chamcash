@@ -15,5 +15,5 @@ Red Bull,313,st,24.90
 Mobil,314,st,5999
 Stol,315,st,79.90
 KLICHA,100,kg,9
-Knafe,1,st,79
+Pelligrini,1,kg,20
 Lunch,316,st,59.90

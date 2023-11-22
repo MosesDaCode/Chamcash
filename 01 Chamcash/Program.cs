@@ -61,8 +61,9 @@ namespace _01_ChamCash
 
 
 
-
-//--Funktion: När man kägger till en ny kampanj; Lägg till felhanteringskontroll att slutdatum ska vara efter startdatum eller tvärtom. -3[V]
+//--Lägg kontroll ifall produkten har ett befintligt kampanj med datum som krockar.
+//--Ge chansen för användaren att välja vilken kampanj denne vill ta bort ifall det finns flera kampanjer för en och samma produkt. -3
+//--Funktion: När man  lägger till en ny kampanj; Lägg till felhanteringskontroll att slutdatum ska vara efter startdatum eller tvärtom. -3[V]
 //--Lägga till kampanj 2 för 1 funkar med start och slutdatum tidigare än idag. -2 el 3. Görs samma sak med procentkampanjen[V]
 //--Systemet kraschar när du köper en produkt som du redigerat tidigare med tomma värden. Tex du anger produktid men inte anger värdet för resten (trycker enter bara) - 1 [V]
 //--Ändra till rätt enhet tex klicha 1 st till rätta enheten som är kg så det blir 1 kg  - 3[V]

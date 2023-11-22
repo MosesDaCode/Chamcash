@@ -9,107 +9,103 @@ namespace _01_Chamcash
 {
     public class CampaignCreation : Campaigns
     {
-        public  void CreateCampaign()
+        public void CreateCampaign()
         {
 
 
             var products = new Products("../../../Products/ProductList.txt");
-            var AddCampaignChoice = Menus.AddCampaignChoice();
-            bool createCampaign = true;
-            while (createCampaign)
+
+            Console.Clear();
+            Console.WriteLine("\t-------------------");
+            Console.WriteLine("\t||Procent kampanj||");
+            Console.WriteLine("\t-------------------\n");
+            Console.Write("Skriv Produkt-ID för produkten: ");
+            string productToAddCampaign = Console.ReadLine();
+            int searchResult = Products.LinearSearch(products.GetProductsFromFile(), productToAddCampaign);
+
+            if (searchResult != -1)
             {
-                switch (AddCampaignChoice)
+                Console.Write("Ange ett start datum för kampanjen (åååå-MM-dd): ");
+                if (DateOnly.TryParse(Console.ReadLine(), out DateOnly startDate))
                 {
-                    case "1":
-                        Console.Clear();
-                        Console.WriteLine("\t-------------------");
-                        Console.WriteLine("\t||Procent kampanj||");
-                        Console.WriteLine("\t-------------------\n");
-                        Console.Write("Skriv Produkt-ID för produkten: ");
-                        string productToAddCampaign = Console.ReadLine();
-                        int searchResult = Products.LinearSearch(products.GetProductsFromFile(), productToAddCampaign);
-
-                        if (searchResult != -1)
+                    Console.Write("Ange slut datum för kampanjen (åååå-MM-dd): ");
+                    if (DateOnly.TryParse(Console.ReadLine(), out DateOnly endDate))
+                    {
+                        if (startDate < endDate && endDate >= DateOnly.FromDateTime(DateTime.Now))
                         {
-                            Console.Write("Ange ett start datum för kampanjen (åååå-MM-dd): ");
-                            if (DateOnly.TryParse(Console.ReadLine(), out DateOnly startDate))
+                            Console.Write("Lägg till en rabatt i procent (%): ");
+                            if (float.TryParse(Console.ReadLine(), out float campaignPrice))
                             {
-                                Console.Write("Ange slut datum för kampanjen (åååå-MM-dd): ");
-                                if (DateOnly.TryParse(Console.ReadLine(), out DateOnly endDate))
+                                if (campaignPrice != 0)
                                 {
-                                    if (startDate < endDate)
+                                    Campaigns newCampaignPrice = new Campaigns(productToAddCampaign, startDate, endDate, campaignPrice, "../../../Products/ProductList.txt");
+                                    if (OverLappingCampaign(newCampaignPrice))
                                     {
-                                        Console.Write("Lägg till en rabatt i procent (%): ");
-                                        if (float.TryParse(Console.ReadLine(), out float campaignPrice))
-                                        {
-                                            if (campaignPrice != 0)
-                                            {
-                                                Campaigns newCampaignPrice = new Campaigns(productToAddCampaign, startDate, endDate, campaignPrice, "../../../Products/ProductList.txt");
-                                                if (newCampaignPrice._endDate >= DateOnly.FromDateTime(DateTime.Now) && newCampaignPrice._startDate < newCampaignPrice._endDate)
-                                                {
-                                                    AddActiveCampaign(newCampaignPrice);
-
-                                                }
-                                                else
-                                                {
-                                                    Console.WriteLine("kampanjen kan inte läggas till! Slutdatum har redan gått ut. Tryck på enter och försök igen!");
-                                                }
-                                            }
-
-                                            else
-                                            {
-                                                Console.WriteLine("Du kan inte ha en rabatt på 0%, tryck på enter och försök igen!");
-                                            }
-
-                                            Console.WriteLine("Wohoo kampanjpriser har skapats!! tryck på enter för att fortsätta...");
-
-                                            createCampaign = false;
-                                            Console.ReadKey();
-                                            Console.Clear();
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("Du har anget ett ogiltigt kampanjpris!, Tryck på enter och försök igen");
-                                            Console.ReadKey();
-                                        }
+                                        AddActiveCampaign(newCampaignPrice);
+                                        Console.WriteLine("Wohoo kampanjpriser har skapats!! tryck på enter för att fortsätta...");
+                                        Console.ReadKey();
+                                        Console.Clear();
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Du har anget ett ogiltigt slut datum!, Tryck på enter och försök igen");
+                                        Console.WriteLine("Det finns redan en kampanj inom det angivna tidsspannet. Tryck på enter och försök igen!");
                                         Console.ReadKey();
+                                        Console.Clear();
                                     }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Du kan inte ha en rabatt på 0%, tryck på enter och försök igen!");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                             }
                             else
                             {
-                                Console.WriteLine("Du har anget ett ogiltigt start datum!, Tryck på enter och försök igen");
+                                Console.WriteLine("Du har anget ett ogiltigt kampanjpris!, Tryck på enter och försök igen");
                                 Console.ReadKey();
+                                Console.Clear();
                             }
-                        }
-                        else if (productToAddCampaign == "0")
-                        {
-                            Console.Clear();
-                            AddCampaignChoice = Menus.AddCampaignChoice();
-
                         }
                         else
                         {
-                            Console.WriteLine("Producten finns inte, försök igen!");
+                            Console.WriteLine("Du har anget ett ogiltigt slut datum!, Tryck på enter och försök igen");
+                            Console.ReadKey();
+                            Console.Clear();
                         }
-                        break;
-                    case "0":
-                        Console.Clear();
-                        createCampaign = false;
-                        break;
-                    default:
-                        Console.WriteLine("Du har angett fel meny val, tryck på enter för att fortsätta!");
-                        Console.ReadKey();
-                        Console.Clear();
-                        AddCampaignChoice = Menus.AddCampaignChoice();
-                        break;
+                    }
                 }
-
+                else
+                {
+                    Console.WriteLine("Du har anget ett ogiltigt start datum!, Tryck på enter och försök igen");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
             }
+            else if (productToAddCampaign == "0")
+            {
+                Console.Clear();
+            }
+            else
+            {
+                Console.WriteLine("Producten finns inte, försök igen!");
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+        private bool OverLappingCampaign(Campaigns newCampaign)
+        {
+            GetCampaignFromFile();
+            foreach (var existingCampaign in _campaignPrices)
+            {
+                if (existingCampaign._productId == newCampaign._productId &&
+                    newCampaign._startDate <= existingCampaign._endDate &&
+                    newCampaign._endDate >= existingCampaign._startDate)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

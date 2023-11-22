@@ -23,3 +23,107 @@ Smör	-4st	26.50kr /st = -106kr
 
 	Totalt: -106,00kr
 -------------------------- 
+
+	KVITTO
+ 2023-11-21 20:10:23
+Kvitto:159
+---------------------------
+Produkt-ID: 1, Antal: 4
+---------------------------
+Kahwa	4st	10kr /st = 40kr
+
+	Totalt: 40,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-21 20:12:13
+Kvitto:160
+---------------------------
+Produkt-ID: 1, Antal: 4
+---------------------------
+Kahwa	4st	10kr /st = 40kr
+
+	Totalt: 40,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-21 20:12:53
+Kvitto:161
+---------------------------
+Produkt-ID: 1, Antal: 5
+---------------------------
+Pelligrini	5kg	20kr /kg = 100kr
+
+	Totalt: 100,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-21 20:18:45
+Kvitto:162
+---------------------------
+Produkt-ID: 1, Antal: 4
+Produkt-ID: 300, Antal: 3
+---------------------------
+Pelligrini	4kg	20kr /kg = 80kr
+Bananer	3kg	12.50kr /kg = 37,5kr
+
+	Totalt: 117,50kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-21 20:23:05
+Kvitto:163
+---------------------------
+Produkt-ID: 1, Antal: 2
+---------------------------
+Pelligrini	2kg	20kr /kg = 40kr
+Kampanjpris för Pelligrini: 10% rabatt = 36
+
+
+	Totalt: 36,00kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-21 20:25:16
+Kvitto:164
+---------------------------
+Produkt-ID: 1, Antal: 10
+Produkt-ID: 311, Antal: 4
+Produkt-ID: 303, Antal: 5
+---------------------------
+Pelligrini	10kg	20kr /kg = 200kr
+Kampanjpris för Pelligrini: 10% rabatt = 180
+
+Skinka	4st	59.90kr /st = 239,6kr
+Mjölk	5st	19.50kr /st = 97,5kr
+
+	Totalt: 517,10kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-21 20:53:33
+Kvitto:165
+---------------------------
+Produkt-ID: 1, Antal: 10
+Produkt-ID: 300, Antal: 1
+---------------------------
+Pelligrini	10kg	20kr /kg = 200kr
+Kampanjpris för Pelligrini: 10% rabatt = 180
+
+Bananer	1kg	12.50kr /kg = 12,5kr
+
+	Totalt: 192,50kr
+-------------------------- 
+
+	KVITTO
+ 2023-11-21 20:55:56
+Kvitto:166
+---------------------------
+Produkt-ID: 1, Antal: 100
+---------------------------
+Pelligrini	100kg	20kr /kg = 2000kr
+Kampanjpris för Pelligrini: 10% rabatt = 1800
+
+
+	Totalt: 1800,00kr
+-------------------------- 

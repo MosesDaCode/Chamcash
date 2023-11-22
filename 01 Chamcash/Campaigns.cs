@@ -76,13 +76,17 @@ namespace _01_Chamcash
 
             File.AppendAllLines(_campaignFilePath, line);
 
-            newCampaign.Clear();
+            ClearCampaignList();
 
+        }
+        public void ClearCampaignList()
+        {
+            _campaignPrices.Clear();
         }
         public void AddActiveCampaign(Campaigns campaign)
         {
             _campaignPrices.Add(campaign);
-            AddCampaignToFile(_campaignPrices);
+            AddCampaignToFile(new List<Campaigns> { campaign});
         }
         public void RemoveExpiredCampaign()
         {
@@ -101,15 +105,17 @@ namespace _01_Chamcash
                 File.AppendAllText(_campaignFilePath, line + Environment.NewLine);
             }
         }
-        public void RemoveCampaign(string removeCampaignstring)
+        public void RemoveCampaign(Campaigns removeCampaignstring)
         {
-            GetCampaignFromFile();
-            Campaigns campaignToRemove = _campaignPrices.Find(campaign => campaign._productId == removeCampaignstring);
-            if (campaignToRemove != null)
+            //GetCampaignFromFile();
+            Campaigns campaignToRemove = _campaignPrices.Find(campaign => campaign._productId == removeCampaignstring._productId);
+            if (removeCampaignstring != null)
             {
-                _campaignPrices.Remove(campaignToRemove);
+                _campaignPrices.Remove(removeCampaignstring);
                 UpdateCampaignFile();
                 Console.WriteLine("Kampanjen har tagits bort!, tryck på enter för att fortsätta.");
+                Console.ReadKey();
+                Console.Clear();
             }
             else
             {
@@ -137,7 +143,8 @@ namespace _01_Chamcash
 
                         break;
                     case "2":
-                        removeCampaign.RemoveCampaign();
+                        Console.Clear();
+                        removeCampaign.RemoveExistingCampaign();
                         break;
                     case "0":
                         campaignManagmentRunning = false;
