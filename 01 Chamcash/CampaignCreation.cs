@@ -18,6 +18,7 @@ namespace _01_Chamcash
             Console.Clear();
             Console.WriteLine("\t-------------------");
             Console.WriteLine("\t||Procent kampanj||");
+            Console.WriteLine("\t||0. Gå tillbaka ||");
             Console.WriteLine("\t-------------------\n");
             Console.Write("Skriv Produkt-ID för produkten: ");
             string productToAddCampaign = Console.ReadLine();

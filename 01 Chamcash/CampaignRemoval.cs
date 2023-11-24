@@ -14,6 +14,7 @@ namespace _01_Chamcash
         {
             Console.WriteLine("\t---------------------------");
             Console.WriteLine("\t||Ta bort kampanj        ||");
+            Console.WriteLine("\t||0. Gå tillbaka         ||");
             Console.WriteLine("\t---------------------------\n");
             Console.Write("Ange product-ID på vars kampanj du vill ta bort: ");
             string productToRemove = Console.ReadLine();

@@ -107,7 +107,7 @@ namespace _01_ChamCash
             Console.WriteLine("\t||Lägg till en produkt       ||");
             Console.WriteLine("\t||Ange 0 för att gå tillbaka ||");
             Console.WriteLine("\t-------------------------------\n");
-            Console.Write("\n\n\tAnge produkt-ID för produkten som ska redigeras: ");
+            Console.Write("\n\n\tAnge produkt-ID för produkten som ska läggas till: ");
             string productId = Console.ReadLine();
             string productName = null;
             string productPrice = null;
