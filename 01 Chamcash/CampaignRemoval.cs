@@ -53,7 +53,8 @@ namespace _01_Chamcash
                 else
                 {
                     Console.WriteLine("Ingen kampanj med angivet produkt-ID hittades! Tryck på enter för att fortsätta.");
-                    
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 //Console.ReadKey();
                 //Console.Clear();

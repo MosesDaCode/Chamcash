@@ -1,0 +1,52 @@
+
+
+	KVITTO
+ 2023-11-23 00:01:37
+Kvitto:169
+---------------------------
+Produkt-ID: 100, Antal: 2
+Produkt-ID: 1, Antal: 3
+Produkt-ID: 300, Antal: 2
+Produkt-ID: 301, Antal: 3
+Produkt-ID: 302, Antal: 3
+Produkt-ID: 303, Antal: 3
+Produkt-ID: 304, Antal: 2
+Produkt-ID: 305, Antal: 2
+Produkt-ID: 306, Antal: 2
+Produkt-ID: 307, Antal: 2
+Produkt-ID: 308, Antal: 2
+Produkt-ID: 309, Antal: 2
+Produkt-ID: 310, Antal: 2
+Produkt-ID: 311, Antal: 3
+Produkt-ID: 312, Antal: 3
+Produkt-ID: 313, Antal: 3
+Produkt-ID: 314, Antal: 3
+Produkt-ID: 315, Antal: 3
+Produkt-ID: 316, Antal: 3
+---------------------------
+KLICHA	2kg	9kr /kg = 18kr
+Kampanjpris för KLICHA: 20% rabatt = 14,4
+
+Pelligrini	3kg	20kr /kg = 60kr
+Bananer	2kg	12.50kr /kg = 25kr
+Kampanjpris för Bananer: 10% rabatt = 22,5
+
+Kaffe	3st	35.50kr /st = 106,5kr
+Smör	3st	26.50kr /st = 79,5kr
+Mjölk	3st	19.50kr /st = 58,5kr
+Snus	2st	49kr /st = 98kr
+Kex	2st	13.90kr /st = 27,8kr
+Korv	2st	35kr /st = 70kr
+Kött	2kg	89kr /kg = 178kr
+Parfym	2st	78.50kr /st = 157kr
+Vatten	2st	19.90kr /st = 39,8kr
+Dator	2st	3999kr /st = 7998kr
+Skinka	3st	59.90kr /st = 179,70001kr
+Lampa	3st	23.90kr /st = 71,7kr
+Red Bull	3st	24.90kr /st = 74,7kr
+Mobil	3st	5999kr /st = 17997kr
+Stol	3st	79.90kr /st = 239,70001kr
+Lunch	3st	59.90kr /st = 179,70001kr
+
+	Totalt: 27652,50kr
+-------------------------- 
