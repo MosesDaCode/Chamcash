@@ -86,28 +86,35 @@ namespace _01_Chamcash
         public void AddActiveCampaign(Campaigns campaign)
         {
             _campaignPrices.Add(campaign);
-            AddCampaignToFile(new List<Campaigns> { campaign});
+            AddCampaignToFile(new List<Campaigns> { campaign });
         }
         public void RemoveExpiredCampaign()
         {
             DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
-           
+
             _campaignPrices.RemoveAll(campaign => campaign._endDate < currentDate);
             UpdateCampaignFile();
         }
         public void UpdateCampaignFile()
         {
-            File.WriteAllText(_campaignFilePath, string.Empty);
-
-            foreach (var campaign in _campaignPrices)
+            if (File.Exists(_campaignFilePath))
             {
-                string line = $"{campaign._productId}, {campaign._startDate}, {campaign._endDate}, {campaign._price}";
-                File.AppendAllText(_campaignFilePath, line + Environment.NewLine);
+                return;
             }
+            else
+            {
+                File.WriteAllText(_campaignFilePath, string.Empty);
+
+                foreach (var campaign in _campaignPrices)
+                {
+                    string line = $"{campaign._productId}, {campaign._startDate}, {campaign._endDate}, {campaign._price}";
+                    File.AppendAllText(_campaignFilePath, line + Environment.NewLine);
+                }
+            }
+
         }
         public void RemoveCampaign(Campaigns removeCampaignstring)
         {
-            //GetCampaignFromFile();
             Campaigns campaignToRemove = _campaignPrices.Find(campaign => campaign._productId == removeCampaignstring._productId);
             if (removeCampaignstring != null)
             {
@@ -159,6 +166,6 @@ namespace _01_Chamcash
                 }
             }
         }
-        
+
     }
 }

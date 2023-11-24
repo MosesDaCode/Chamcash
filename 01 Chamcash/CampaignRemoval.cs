@@ -56,8 +56,6 @@ namespace _01_Chamcash
                     Console.ReadKey();
                     Console.Clear();
                 }
-                //Console.ReadKey();
-                //Console.Clear();
             }
             else if (productToRemove == "0")
             {

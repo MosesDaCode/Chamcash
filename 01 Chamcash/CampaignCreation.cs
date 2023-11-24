@@ -25,10 +25,10 @@ namespace _01_Chamcash
 
             if (searchResult != -1)
             {
-                Console.Write("Ange ett start datum för kampanjen (åååå-MM-dd): ");
+                Console.Write("Ange ett startdatum för kampanjen (åååå-MM-dd): ");
                 if (DateOnly.TryParse(Console.ReadLine(), out DateOnly startDate))
                 {
-                    Console.Write("Ange slut datum för kampanjen (åååå-MM-dd): ");
+                    Console.Write("Ange slutdatum för kampanjen (åååå-MM-dd): ");
                     if (DateOnly.TryParse(Console.ReadLine(), out DateOnly endDate))
                     {
                         if (startDate < endDate && endDate >= DateOnly.FromDateTime(DateTime.Now))
@@ -36,7 +36,7 @@ namespace _01_Chamcash
                             Console.Write("Lägg till en rabatt i procent (%): ");
                             if (float.TryParse(Console.ReadLine(), out float campaignPrice))
                             {
-                                if (campaignPrice != 0)
+                                if (campaignPrice > 0 && campaignPrice < 100)
                                 {
                                     Campaigns newCampaignPrice = new Campaigns(productToAddCampaign, startDate, endDate, campaignPrice, "../../../Products/ProductList.txt");
                                     if (OverLappingCampaign(newCampaignPrice))
@@ -55,7 +55,7 @@ namespace _01_Chamcash
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Du kan inte ha en rabatt på 0%, tryck på enter och försök igen!");
+                                    Console.WriteLine("Ogiltig rabatt, tryck på enter och försök igen!");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -69,15 +69,21 @@ namespace _01_Chamcash
                         }
                         else
                         {
-                            Console.WriteLine("Du har anget ett ogiltigt slut datum!, Tryck på enter och försök igen");
+                            Console.WriteLine("Du har anget ett ogiltigt slutdatum!, Tryck på enter och försök igen");
                             Console.ReadKey();
                             Console.Clear();
                         }
                     }
+                    else
+                    {
+                        Console.WriteLine("Du har anget ett ogiltigt slutdatum!, Tryck på enter och försök igen ");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Du har anget ett ogiltigt start datum!, Tryck på enter och försök igen");
+                    Console.WriteLine("Du har anget ett ogiltigt startdatum!, Tryck på enter och försök igen");
                     Console.ReadKey();
                     Console.Clear();
                 }

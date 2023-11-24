@@ -28,7 +28,7 @@ namespace _01_Chamcash
 
 
 
-                int serialNumber = 0;
+                int serialNumber = 1;
                 string serialNumberFilePath = "../../../SerialNumber/serialNumber.txt";
                 if (File.Exists(serialNumberFilePath))
                 {

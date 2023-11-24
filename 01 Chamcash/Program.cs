@@ -13,6 +13,7 @@ namespace _01_ChamCash
             var campaignPrice = new Campaigns();
             var newCostumer = new NewCostumer();
             var AdminMenuOption = new AdminMenuOption();
+            campaignPrice.UpdateCampaignFile();
             campaignPrice.GetCampaignFromFile();
             campaignPrice.RemoveExpiredCampaign();
 
