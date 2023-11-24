@@ -26,15 +26,13 @@ namespace _01_Chamcash
                 {
                     for (int i = 0; i < campaignsToRemove.Count; i++)
                     {
-                        Console.WriteLine($"{i + 1}, {campaignsToRemove[i]._startDate} - {campaignsToRemove[i]._endDate} ({campaignsToRemove[i]._price}% Rabatt)");
+                        Console.WriteLine($"{i + 1}. {campaignsToRemove[i]._startDate} - {campaignsToRemove[i]._endDate} ({campaignsToRemove[i]._price}% Rabatt)");
                     }
                     Console.Write("Ange siffran för kampanjen som ska tas bort: ");
                     int.TryParse(Console.ReadLine(), out int selectedIndex);
                     if (selectedIndex > 0 && selectedIndex <= campaignsToRemove.Count)
                     {
-
                         RemoveCampaign(campaignsToRemove[selectedIndex - 1]);
-
                     }
                     else if (selectedIndex == 0)
                     {
@@ -49,6 +47,8 @@ namespace _01_Chamcash
                         Console.ReadKey();
                         Console.Clear();
                     }
+                    _campaignPrices.Clear();
+
                 }
                 else
                 {
