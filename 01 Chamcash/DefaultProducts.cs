@@ -15,7 +15,7 @@ namespace _01_Chamcash
                                      "Kaffe,301,st,35.50\n" +
                                      "Godis,302,kg,98.90\n" +
                                      "Mjölk,303,st,19.50\n" +
-                                     "Snus,304,st,49";
+                                     "Snus,304,st,49\n";
             if (File.Exists("../../../Products/ProductList.txt"))
             {
                 return;

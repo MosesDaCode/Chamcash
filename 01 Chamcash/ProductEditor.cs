@@ -35,7 +35,7 @@ namespace _01_ChamCash
                     {
                         Console.Write("\tAnge antingen st eller kg: ");
                         string newUnit = Console.ReadLine();
-                        if (newUnit != "0" && newUnit != "")
+                        if (newUnit != "0" && newUnit != "" && (newUnit == "kg".ToLower() || newUnit == "st".ToLower()))
                         {
                             string[] editedProduct = { newName, oldProductId, newUnit, newPrice };
 
@@ -126,7 +126,7 @@ namespace _01_ChamCash
                     {
                         Console.Write("\tAnge antingen st eller kg: ");
                         productUnit = Console.ReadLine();
-                        if (productUnit != "0" && productUnit != "" && productUnit == "kg" || productUnit == "st")
+                        if (productUnit != "0" && productUnit != "" && (productUnit == "kg".ToLower() || productUnit == "st".ToLower()))
                         {
                             string[] newProduct = { productName, productId, productUnit, productPrice };
                             SaveProductsToFile(newProduct);

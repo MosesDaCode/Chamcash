@@ -97,12 +97,7 @@ namespace _01_Chamcash
         }
         public void UpdateCampaignFile()
         {
-            if (File.Exists(_campaignFilePath))
-            {
-                return;
-            }
-            else
-            {
+            
                 File.WriteAllText(_campaignFilePath, string.Empty);
 
                 foreach (var campaign in _campaignPrices)
@@ -110,6 +105,17 @@ namespace _01_Chamcash
                     string line = $"{campaign._productId}, {campaign._startDate}, {campaign._endDate}, {campaign._price}";
                     File.AppendAllText(_campaignFilePath, line + Environment.NewLine);
                 }
+
+        }
+        public void CreateCampaignFile()
+        {
+            if (File.Exists(_campaignFilePath))
+            {
+                return;
+            }
+            else
+            {
+                UpdateCampaignFile();
             }
 
         }
