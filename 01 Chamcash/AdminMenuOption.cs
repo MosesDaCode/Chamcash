@@ -13,7 +13,6 @@ namespace _01_Chamcash
         {
             var products = new Products("../../../Products/ProductList.txt");
             var productEdit = new ProductEditor("../../../Products/ProductList.txt");
-            var productList = products.GetProductsFromFile();
             var campaignPrice = new Campaigns();
 
             bool adminRunning = true;
@@ -26,11 +25,11 @@ namespace _01_Chamcash
                 switch (adminChoice)
                 {
                     case "1":
-                        productEdit.CreateNewProduct(productList);
+                        productEdit.CreateNewProduct(productEdit._productList);
                         Console.Clear();
                         break;
                     case "2":
-                        productEdit.EditProduct(productList);
+                        productEdit.EditProduct(productEdit._productList);
                         Console.Clear();
                         break;
                     case "3":

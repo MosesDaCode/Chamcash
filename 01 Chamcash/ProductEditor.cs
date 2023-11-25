@@ -113,7 +113,7 @@ namespace _01_ChamCash
             string productPrice = null;
             string productUnit = null;
             int searchResult = LinearSearch(product, productId);
-            if (searchResult == -1 && productId != "0")
+            if (searchResult == -1 && productId != "0" && productId != "")
             {
                 Console.Write("\tAnge produktens namn: ");
                 productName = Console.ReadLine();
@@ -130,6 +130,7 @@ namespace _01_ChamCash
                         {
                             string[] newProduct = { productName, productId, productUnit, productPrice };
                             SaveProductsToFile(newProduct);
+                            _productList.Add(newProduct);
 
                             Console.WriteLine("\tProdukten har sparats! Tryck på enter för att fortsätta.");
                             Console.ReadKey();
