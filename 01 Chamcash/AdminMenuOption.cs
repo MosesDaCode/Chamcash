@@ -11,7 +11,6 @@ namespace _01_Chamcash
     {
         public void AdminMenuChoice()
         {
-            var products = new Products("../../../Products/ProductList.txt");
             var productEdit = new ProductEditor("../../../Products/ProductList.txt");
             var campaignPrice = new Campaigns();
 
