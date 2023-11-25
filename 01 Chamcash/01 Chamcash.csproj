@@ -8,11 +8,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Campaigns\" />
-    <Folder Include="Products\" />
-    <Folder Include="Receipts\" />
-    <Folder Include="SerialNumber\" />
-  </ItemGroup>
-
 </Project>
