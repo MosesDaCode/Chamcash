@@ -1,10 +1,14 @@
 # Chamcash
 
-## Beskrivning
+Chamcash is an application designed to manage financial transactions and accounts. The program offers users a platform to perform and track their financial activities. The system utilizes CRUD operations (Create, Read, Update, Delete) to efficiently manage financial data.
 
-Chamcash är en applikation designad för att hantera finansiella transaktioner och konton. Programmet erbjuder användare en plattform för att utföra och spåra sina ekonomiska aktiviteter.
+## Technologies
 
-## Teknologier
-
-Projektet är byggt med följande teknologi:
+The project is built with the following technology:
 - C#
+
+## Features
+
+- **Transaction Management**: Create, view, update, and delete financial transactions.
+- **Account Management**: Save, read, update, and delete account information.
+- **Tracking and Reporting**: Generate and view reports on financial activities.
